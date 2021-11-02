@@ -1,3 +1,4 @@
+//  пример кода с лекции
     .global main
 main:
     mov $0, %eax
