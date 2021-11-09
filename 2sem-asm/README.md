@@ -5,7 +5,7 @@
 * [Использование переменной](variable.S)
 * [Изменение значения переменной](modify_variable.S)
 * [Массив](array.S)
-* [Структура person](person.S)
+* [Структура person](persons.S)
 
 
 
