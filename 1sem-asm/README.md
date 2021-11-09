@@ -8,15 +8,26 @@
 
 `gcc -m32 <file_name> -o <binname>`
 
-`gcc -m32 prog1.S simpleio_i686.S -o prog1.o`
+`gcc -m32 prog1.S simpleio_i686.S -o prog1`
 
 ### Запуск:
 
-`./prog1.o`
+`./prog1`
 
 ### Сгенерировать asm код из c:
 
 `gcc -S -m32 -O0 file.c`
+
+## simpleio_i686.S
+
+readi32 - считать 32 битное число (сложится в eax)
+
+readi64 - считать 64 битное число (сложится в edx:eax)
+
+writei32 - напечатать 32 битное число (печатается из eax)
+
+writei64 - напечатать 64 битное число (печатается из edx:eax)
+
 
 ## GDB:
 
@@ -24,11 +35,11 @@
 
 Нужно компилировать с отладочными символами
 
-`gcc -m32 -g prog1.S simpleio_i686.S -o prog1.o`
+`gcc -m32 -g prog1.S simpleio_i686.S -o prog1`
 
 ### Запуск:
 
-`gdb ./prog1.o`
+`gdb ./prog1`
 
 ### Команды:
 
@@ -41,8 +52,9 @@
     next (n) - сделать шаг исполнения (без захода в функции)
     continue (c) - продолжить выполнение до следующего брейкпоинта
     help <command> - справка по команде
-    
+
     p/t $eax - напечатать регистр eax бинарно
+    p/tz $eax - напечатать регистр eax в 16-ричном виде
 
 
 ## Регистры:
@@ -67,6 +79,7 @@
         test   SRC, DST        /* DST & SRC, результат не сохраняется  */
         adc    SRC, DST        /* DST += SRC + CF */
         sbb    SRC, DST        /* DST -= SRC - CF */
+        sdq                    /* расширяет старший бит регистра %eax на %edx */
 
 ## Флаги:
 
