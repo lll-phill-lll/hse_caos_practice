@@ -1,16 +1,22 @@
+// ** Условие **
+// написать функцию на ассемблере, которая будет печатать "4 5", используя printf
     .global print_4_5
+
 print_4_5:
-    push %ebp 			// push stack frame
-    mov %esp, %ebp
+    push    %ebp
+    mov     %esp, %ebp
 
-    push $5
-    push $4
+    // printf("%d %d\n", 4, 5);
+    // кладем аргументы с конца, потому что printf будет читать их сверху вниз на стеке
+    // поэтому нужно, чтобы наверху был первый аргумент и тд
+    push    $5
+    push    $4
 
-    push $printf_format
-    call printf
+    push    $printf_format   // обычная фоорматная строка из C
+    call    printf
 
-    mov %ebp, %esp
-    pop %ebp
+    mov     %ebp, %esp
+    pop     %ebp
 
     ret
 
