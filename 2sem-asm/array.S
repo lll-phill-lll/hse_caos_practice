@@ -1,28 +1,40 @@
+// ** Условие **
+// Массив на 200 элементов типа int.
+// Подается на вход индекс и значение.
+// Требуется вывести старое значение по индексу
+// и обновить его на введенное
+
     .global main
 main:
-    call readi32 // read index
-    mov %eax, %ebx
-    call readi32 // read value
-    mov %eax, %edx
+    call    readi32         // прочитали индекс
+    cmp     $-1, %eax
+    jz      fin             // если индекс -1, то заканчиваем
 
-    mov $arr, %edi // move address of arr to edi use $
-    shl $2, %ebx
-    add %ebx, %edi
-    mov (%edi), %eax
-    // same as:   mov (%edi, %ebx, 4), %eax   -- edi + ebx * 4 -> eax
-    // or:        mov arr(%edi, %ebx, 4), %eax  -- addr(arr) + edi + ebx * 4 -> eax
-    // our case:  mov arr(, %ebx, 4), %eax      -- addr(arr) + ebx * 4 -> eax
+    mov     %eax, %ebx
+    call    readi32         // читаем новое значение
+    mov     %eax, %edx
+
+    mov     $arr, %edi      // кладем адрес начала массива в %edi. Используем $, чтобы получить адрес
+    shl     $2, %ebx        // умножаем индекс на 4, так как хотим за одно значение индекса пропускать 4 байта (1 int)
+    add     %ebx, %edi      // прибавляем наш сдвиг кратный 4 к началу массива
+    mov     (%edi), %eax    // в edi сейчас находится како1-то адрес, чтобы получить значение по этоому адресу используем ()
+
+    // могли бы то же самое записать по-другому:
+    // same as:   mov (%edi, %ebx, 4), %eax     --  edi + ebx * 4 -> eax
+    // or:        mov arr(%edi, %ebx, 4), %eax  --  addr(arr) + edi + ebx * 4 -> eax
+    // our case:  mov arr(, %ebx, 4), %eax      --  addr(arr) + ebx * 4 -> eax
 
 
-    call writei32
+    call    writei32
 
-    mov %edx, (%edi) // move to address from edi
+    mov     %edx, (%edi)    // складываем новое значение по адресу, указанному в edi
 
-    jmp main
+    jmp     main
 
-    call finish
+fin:
+    call    finish
 
     .data
 arr:
-    .skip 800 // 200 value 4 bytes each (int)
+    .skip 800               // 200 значение типа int (4 байта)
 
