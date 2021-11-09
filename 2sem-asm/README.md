@@ -9,6 +9,7 @@
 * [Call/ret](double_eax.S)
 * [Работа со стеком](read_and_add.S) (Объяснено, что происходит со стеком)
 * Работа с C/C++: [asm](sum_numbers.S), [c](sum_numbers.c), [c++](sum_numbers.cpp)
+* [Вызов printf](simple_print.S)
 
 # Работа со стеком (TBD)
 
