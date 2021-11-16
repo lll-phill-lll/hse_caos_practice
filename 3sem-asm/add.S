@@ -3,7 +3,7 @@
     .global main
 main:
     .equ    STDOUT_FILENO, 1
-    .equ    STDIN_FILENO, 1
+    .equ    STDIN_FILENO, 0
     .equ    SUCCESS, 0
 
     .equ    BUF_SIZE, 1024
