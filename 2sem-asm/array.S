@@ -20,9 +20,11 @@ main:
     mov     (%edi), %eax    // в edi сейчас находится како1-то адрес, чтобы получить значение по этоому адресу используем ()
 
     // могли бы то же самое записать по-другому:
-    // same as:   mov (%edi, %ebx, 4), %eax     --  edi + ebx * 4 -> eax
-    // or:        mov arr(%edi, %ebx, 4), %eax  --  addr(arr) + edi + ebx * 4 -> eax
-    // our case:  mov arr(, %ebx, 4), %eax      --  addr(arr) + ebx * 4 -> eax
+    // same as:   mov (%edi, %ebx, 4), %eax     --  value(edi + ebx * 4) -> eax
+    // в main или arr лежит просто адрес на следующую инструкцию, поэтому можем просто
+    // прибавлять сразу к метке
+    // or:        mov arr(%edi, %ebx, 4), %eax  --  value(arr + edi + ebx * 4) -> eax
+    // our case:  mov arr(, %ebx, 4), %eax      --  value(arr + ebx * 4) -> eax
 
 
     call    writei32
