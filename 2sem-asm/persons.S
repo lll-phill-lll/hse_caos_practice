@@ -16,9 +16,9 @@ main:
 
     // могли бы сделать так, но можно лучше
     // mov $4, %edx
-    // mov persons(%edx, %ebx, 8), %eax     // addr(person) + ebx * 8 + edx -> eax
+    // mov persons(%edx, %ebx, 8), %eax     // value(person + ebx * 8 + edx) -> eax
 
-    mov     persons+4(, %ebx, 8), %eax      // addr(person) + 4 + ebx * 8 -> eax
+    mov     persons+4(, %ebx, 8), %eax      // value(person + 4 + ebx * 8) -> eax
     call    writei32
 
 
