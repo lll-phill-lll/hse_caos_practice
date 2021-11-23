@@ -1,4 +1,7 @@
-    #include <sys/syscall.h>
+   // ** Условие **
+   // Используя системные вызовы read, write напечатать 2 строки в stderr и stdout.
+   
+   #include <sys/syscall.h>
     
     // 0 stdin
     // 1 stdout
