@@ -73,5 +73,5 @@ print_hello:
     ret
 
 hello:
-    .asciz  "hello, "
+    .ascii  "hello, "
 hello_end:
