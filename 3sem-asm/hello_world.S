@@ -35,9 +35,9 @@ main:
    int      $0x80
 
 hello_out:
-    .asciz  "hello from stdout\n"
+    .ascii  "hello from stdout\n"
 hello_out_end:
 
 hello_err:
-    .asciz  "hello from stderr\n"
+    .ascii  "hello from stderr\n"
 hello_err_end:
