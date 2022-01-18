@@ -208,6 +208,6 @@ E - экспонента (на сколько нужно умножить ман
 
 ### Полезные ссылки
 
-[https://www.h-schmidt.net/FloatConverter/IEEE754.html](Float калькулятор)
-[http://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/lectures/04-float.pdf](Презентация с лекции)
-[https://github.com/blackav/hse-caos-2020/tree/master/03-floating-point](Материалы прошлого года)
+[Float калькулятор](https://www.h-schmidt.net/FloatConverter/IEEE754.html)
+[Презентация с лекции](http://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/lectures/04-float.pdf)
+[Материалы прошлого года](https://github.com/blackav/hse-caos-2020/tree/master/03-floating-point)
