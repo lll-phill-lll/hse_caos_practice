@@ -25,6 +25,7 @@ void print_bin(unsigned n, unsigned size) {
 // которое положили
 typedef union {
     float f;
+    // Implementation defined. См. https://github.com/lll-phill-lll/hse_caos_207_seminars/tree/master/8sem-c#bit-fields-hack
     struct {
         unsigned int mantissa : 23;
         unsigned int exponent : 8;
@@ -36,6 +37,7 @@ typedef union {
 // тут под мантиссу нужно уже 52 бита
 typedef union {
     double d;
+    // Implementation defined. См. https://github.com/lll-phill-lll/hse_caos_207_seminars/tree/master/8sem-c#bit-fields-hack
     struct {
         unsigned int mantissa1 : 32;
         unsigned int mantissa2 : 20;
