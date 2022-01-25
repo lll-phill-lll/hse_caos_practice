@@ -12,8 +12,8 @@ double dot_product_c(int n, double* x, double *y) {
     return sum;
 }
 
-extern double dot_product(int, double*, double*);
-extern double dot_product_vec(int, double*, double*);
+double dot_product(int, double*, double*);
+double dot_product_vec(int, double*, double*);
 
 int main() {
     srand(time(NULL));

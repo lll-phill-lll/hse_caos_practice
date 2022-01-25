@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-extern void myhypot(double, double, double *);
+void myhypot(double, double, double *);
 
 int main() {
     double a, b;
