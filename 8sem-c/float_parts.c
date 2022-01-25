@@ -20,7 +20,7 @@ void print_bin(unsigned n, unsigned size) {
 // struct parts. Так как и float и parts имеют размер 32 бита.
 // https://en.cppreference.com/w/cpp/language/bit_field
 // !!! Warning!!! в C++ такие операции приведут к UB.
-// Требуется, чтобы из обхединения мы читали только то поле,
+// Требуется, чтобы из объединения мы читали только то поле,
 // которое положили
 typedef union {
     float f;
