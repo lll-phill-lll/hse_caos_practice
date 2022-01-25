@@ -263,6 +263,19 @@ E - экспонента (на сколько нужно умножить ман
 Обратите внимание, что поведение, описанное [тут](float_parts.c) является implementation defined.
 Это означает, что на него нельзя полагаться в общем виде.
 
+```
+typedef union {
+    float f;
+    struct {
+        // implementation defined поведение заключается в порядке бит. 
+        // нет строгих гарантий, что сначала будут идти 23, потом 8, а потом 1.
+        unsigned int mantissa : 23;
+        unsigned int exponent : 8;
+        unsigned int sign : 1;
+    } parts;
+} float_uni;
+```
+
 Об этом сказано в [стандарте C11](../C11_standard.pdf): 6.7.2.1, пункт 11, также об этом можно почитать на [cppreference](https://en.cppreference.com/w/c/language/bit_field) в разделе **Notes**.
 
 Для gcc есть [некоторые гарантии](https://gcc.gnu.org/legacy-ml/gcc/2004-09/msg00581.html) того, что поведение такое, как мы ожидаем.
