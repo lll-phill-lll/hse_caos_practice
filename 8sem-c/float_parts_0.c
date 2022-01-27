@@ -2,6 +2,7 @@
 // части float числа
 
 #include <stdio.h>
+#include <string.h>
 
 // печатаем число в бинарном виде
 // первый аргмент - само число, второй аргумент
@@ -26,8 +27,16 @@ unsigned get_exp(float num) {
     // если бы мы сделали exp = num, то у нас бы случилось
     // преобразование float к unsigned int и биты лежали бы уже
     // другие
-    unsigned exp = *(unsigned*)&num;
-    // Чтобы получить экспаненту нужно избавится от бита знака (сдвинуть на один влево)
+    unsigned exp;
+    memcpy(&exp, &num, sizeof(num));
+
+    // код ниже приводит к нарушению strict aliasing rule
+    // хотя много где он и используется
+    // см пример из: https://en.cppreference.com/w/c/string/byte/memcpy
+    // подробнее про strict aliasing: https://habr.com/ru/company/otus/blog/443602/
+    // unsigned exp = *(unsigned*)&num;
+
+    // Чтобы получить экспоненту нужно избавится от бита знака (сдвинуть на один влево)
     // и избавиться от мантиссы (сдвинуть на 23 вправо
     // (и еще на один вправо так как мы до этого вдигали влево))
     return exp << sign_bits >> (sign_bits + mant_bits);
@@ -37,7 +46,16 @@ unsigned get_exp(float num) {
 unsigned get_mant(float num) {
     const int sign_bits = 1;
     const int exp_bits = 8;
-    unsigned mant = *(unsigned*)&num;
+
+    unsigned mant;
+    memcpy(&mant, &num, sizeof(num));
+
+    // код ниже приводит к нарушению strict aliasing rule
+    // хотя много где он и используется
+    // см пример из: https://en.cppreference.com/w/c/string/byte/memcpy
+    // подробнее про strict aliasing: https://habr.com/ru/company/otus/blog/443602/
+    // unsigned mant = *(unsigned*)&num;
+
     int to_remove = sign_bits + exp_bits;
     // сдвинем на знак и экспонену влево, чтобы обнулить их
     // а затем обратно вправо
@@ -48,7 +66,16 @@ unsigned get_mant(float num) {
 unsigned get_sign(float num) {
     const int sign_bits = 1;
     const int all_bits = 32;
-    unsigned sign = *(unsigned*)&num;
+
+    unsigned sign;
+    memcpy(&sign, &num, sizeof(num));
+
+    // код ниже приводит к нарушению strict aliasing rule
+    // хотя много где он и используется
+    // см пример из: https://en.cppreference.com/w/c/string/byte/memcpy
+    // подробнее про strict aliasing: https://habr.com/ru/company/otus/blog/443602/
+    // unsigned sign = *(unsigned*)&num;
+
     // сдвинем число на 31 вправо, чтобы остался только бит знака
     return sign >> (all_bits - sign_bits);
 }
