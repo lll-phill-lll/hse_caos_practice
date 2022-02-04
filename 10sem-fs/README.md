@@ -215,3 +215,10 @@ s[t]icky - установка этого бита запрещает удаля�
 Установить SUID:
 
     chmod u+s file
+
+## Почитать
+
+1. https://losst.ru/prava-dostupa-k-fajlam-v-linux
+2. https://www.redhat.com/sysadmin/suid-sgid-sticky-bit
+3. http://web.mit.edu/sipb/doc/working/afs/html/subsection3.1.html
+

@@ -31,24 +31,25 @@ int main(int argc, char** argv) {
     // };
 
 
-    // you may want to use this simple check for errors
-    // but with this check we can;t identify the type of error
-    // non existing directory, wrong type and so on
+    // Можно использовать простую проверку на ошибки, но тогда не
+    // получится узнать, почему именно возникла ошибка
+    //
     // if (!d) {
     //     fprintf(stderr, "some error\n");
     //     exit(1);
     // }
 
-    // you may print error in human readable format
+    // Можно напечатать ошибки в человеческом формате, для этого
+    // получим строку из errno
     // if (!d) {
     //     fprintf(stderr, "%s\n", strerror(errno));
     //     exit(1);
     // }
 
-    // or
+    // или можно использовать perror
     // if (!d) {
-    //     // perror takes value from errno, adds custom message to it
-    //     // and prints to stderr
+    //     // perror возьмет значение из errno, прибавит туда
+    //     // переданное сообщение и выведет в stderr
     //     perror("my custom message");
     //     exit(1);
     // }
@@ -68,9 +69,13 @@ int main(int argc, char** argv) {
     }
 
     // !!! NOTE !!!
-    // errno may not be changed if function correctly worked
-    // dont use if (errno != 0). check result of function call.
-    // because value of errno may be from previous function call
+    // errno может не измениться, если функция отработала корректно
+    // Это значит, что нельзя проверять на наличие ошибок так:
+    // if (errno != 0), потому что может быть, что наша функция
+    // отработала корректно и не трогала errno, а значение там осталось
+    // от какого-то другого вызова
+    // Проверяйте возвращаемое значение из функции, чтобы удостовериться
+    //, что произошла ошибка
 
     struct dirent *ent;
 

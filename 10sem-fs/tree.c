@@ -41,6 +41,9 @@ void tree(char *path, int depth) {
 
         switch(entry->d_type) {
             case DT_DIR:
+                // строки при такой записи просто конкатенируются
+                // в конце применяем нейтральный цвет, чтобы не
+                // остался синий навсегда
                 printf(BLU "%s\n" RESET, name);
 
                 if (len + strlen(name) + 1 > PATH_MAX) {
