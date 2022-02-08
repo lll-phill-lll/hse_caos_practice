@@ -27,24 +27,26 @@ int main(int argc, char *argv[]) {
     }
 
     int input_size = st.st_size;
-    char *mp = mmap(NULL, input_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    void *mp = mmap(NULL, input_size, PROT_WRITE, MAP_SHARED, fd, 0);
     if (mp == MAP_FAILED) {
         perror("mmap error");
         exit(1);
     }
 
-    // printf("File: %s", mp);
+    char* data = mp;
+
+    printf("File: %s", data);
     for (int i = 0; i != input_size; ++i) {
-        mp[i] = c;
+        data[i] = c;
     }
 
     if (munmap(mp, input_size) == -1) {
-        perror("can't stat");
+        perror("error");
         exit(1);
     }
 
     if (close(fd) == -1) {
-        perror("can't stat");
+        perror("error");
         exit(1);
     }
 
