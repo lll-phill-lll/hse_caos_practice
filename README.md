@@ -3,19 +3,19 @@
 # Страничка семинаров 207 группы
 
 ## Навигация по семинарам
-* [asm]  [[видео](https://www.youtube.com/watch?v=Tutix99Y2_I)] [Семинар 1 - введение в ассемблер](1sem-asm)
-* [asm]  [[видео](https://www.youtube.com/watch?v=1aZq5COiZks)] [Семинар 2 - работа со стеком, вызов фуннкций из C/C++ кода](2sem-asm)
-* [asm]  [[видео](https://www.youtube.com/watch?v=Ty-TfSRB2P8)] [Семинар 3 - работа со строками, системные вызовы, локальные переменные](3sem-asm)
-* [asm]  [[видео](https://www.youtube.com/watch?v=oqwXGwMW16o)] [Семинар 4 - работа с кучей. Системный вызов brk. my_malloc/my_free](4sem-asm)
-* [c]    [[видео](https://www.youtube.com/watch?v=YPteBhvUSWg)] [Семинар 5 - printf/scanf, выравнивание](5sem-c)
-* [c]    [[видео](https://www.youtube.com/watch?v=rGtolk1oupY)] [Семинар 6 - работа с файлами, буферизация](6sem-c)
-* [c]    [[видео](https://www.youtube.com/watch?v=XGcy3BW0k_w)] [Семинар 7 - переполнение буфера, кэш при умножении матриц](7sem-c)
-* [c]    [[видео]                                             ] [Семинар 8 - float/double, union для получение частей float](8sem-c)
-* [asm]  [[видео](https://www.youtube.com/watch?v=0hi7nVjlPcQ)] [Семинар 9 - векторизованные операции. XMM регистры, inline asm](9sem-asm)
-* [fs]   [[видео](https://www.youtube.com/watch?v=V7PXDmYebl8)] [Семинар 10 - права доступа. симлинки. работа с файлами и директориями](10sem-fs)
-* [fs]   [[видео](https://www.youtube.com/watch?v=8i77sve9QWk)] [Семинар 11 - mmap, fork](11sem-fs)
-* [fs]   [[видео](https://www.youtube.com/watch?v=A1nsJdVrJq8)] [Семинар 12 - fork](12sem-fs)
-* [fs]   [[видео]                                              [Семинар 13 - переменные окружения, exec](13sem-fs)
+* [[видео](https://www.youtube.com/watch?v=Tutix99Y2_I)][asm] [Семинар 1 - введение в ассемблер](1sem-asm)
+* [[видео](https://www.youtube.com/watch?v=1aZq5COiZks)][asm] [Семинар 2 - работа со стеком, вызов фуннкций из C/C++ кода](2sem-asm)
+* [[видео](https://www.youtube.com/watch?v=Ty-TfSRB2P8)][asm] [Семинар 3 - работа со строками, системные вызовы, локальные переменные](3sem-asm)
+* [[видео](https://www.youtube.com/watch?v=oqwXGwMW16o)][asm] [Семинар 4 - работа с кучей. Системный вызов brk. my_malloc/my_free](4sem-asm)
+* [[видео](https://www.youtube.com/watch?v=YPteBhvUSWg)][c]   [Семинар 5 - printf/scanf, выравнивание](5sem-c)
+* [[видео](https://www.youtube.com/watch?v=rGtolk1oupY)][c]   [Семинар 6 - работа с файлами, буферизация](6sem-c)
+* [[видео](https://www.youtube.com/watch?v=XGcy3BW0k_w)][c]   [Семинар 7 - переполнение буфера, кэш при умножении матриц](7sem-c)
+* [видео]                                                     [Семинар 8 - float/double, union для получение частей float](8sem-c)
+* [[видео](https://www.youtube.com/watch?v=0hi7nVjlPcQ)][asm] [Семинар 9 - векторизованные операции. XMM регистры, inline asm](9sem-asm)
+* [[видео](https://www.youtube.com/watch?v=V7PXDmYebl8)][fs]  [Семинар 10 - права доступа. симлинки. работа с файлами и директориями](10sem-fs)
+* [[видео](https://www.youtube.com/watch?v=8i77sve9QWk)][fs]  [Семинар 11 - mmap, fork](11sem-fs)
+* [[видео](https://www.youtube.com/watch?v=A1nsJdVrJq8)][fs]  [Семинар 12 - fork](12sem-fs)
+* [видео]                                               [fs]  [Семинар 13 - переменные окружения, exec](13sem-fs)
 
 ## Навигация по темам
 
