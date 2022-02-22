@@ -3,17 +3,19 @@
 # Страничка семинаров 207 группы
 
 ## Навигация по семинарам
-* [[asm] Семинар 1 - введение в ассемблер](1sem-asm)
-* [[asm] Семинар 2 - работа со стеком, вызов фуннкций из C/C++ кода](2sem-asm)
-* [[asm] Семинар 3 - работа со строками, системные вызовы, локальные переменные](3sem-asm)
-* [[asm] Семинар 4 - работа с кучей. Системный вызов brk. my_malloc/my_free](4sem-asm)
-* [[c]   Семинар 5 - printf/scanf, вырравнивание](5sem-c)
-* [[c]   Семинар 6 - работа с файлами, буферизация](6sem-c)
-* [[c]   Семинар 7 - переполнение буфера, кэш при умножении матриц](7sem-c)
+* [[asm] Семинар 1 - введение в ассемблер](1sem-asm) [видео](https://www.youtube.com/watch?v=Tutix99Y2_I)
+* [[asm] Семинар 2 - работа со стеком, вызов фуннкций из C/C++ кода](2sem-asm) [видео](https://www.youtube.com/watch?v=1aZq5COiZks)
+* [[asm] Семинар 3 - работа со строками, системные вызовы, локальные переменные](3sem-asm) [видео](https://www.youtube.com/watch?v=Ty-TfSRB2P8)
+* [[asm] Семинар 4 - работа с кучей. Системный вызов brk. my_malloc/my_free](4sem-asm) [видео](https://www.youtube.com/watch?v=oqwXGwMW16o)
+* [[c]   Семинар 5 - printf/scanf, выравнивание](5sem-c) [видео](https://www.youtube.com/watch?v=YPteBhvUSWg)
+* [[c]   Семинар 6 - работа с файлами, буферизация](6sem-c) [видео](https://www.youtube.com/watch?v=rGtolk1oupY)
+* [[c]   Семинар 7 - переполнение буфера, кэш при умножении матриц](7sem-c) [видео](https://www.youtube.com/watch?v=XGcy3BW0k_w)
 * [[c]   Семинар 8 - float/double, union для получение частей float](8sem-c)
-* [[asm] Семинар 9 - векторизованные операции. XMM регистры, inline asm](9sem-asm)
-* [[fs]   Семинар 10 - права доступа. симлинки. работа с файлами и директориями](10sem-fs)
-* [[fs]   Семинар 11 - mmap, fork](11sem-fs)
+* [[asm] Семинар 9 - векторизованные операции. XMM регистры, inline asm](9sem-asm) [видео](https://www.youtube.com/watch?v=0hi7nVjlPcQ)
+* [[fs]   Семинар 10 - права доступа. симлинки. работа с файлами и директориями](10sem-fs) [видео](https://www.youtube.com/watch?v=V7PXDmYebl8)
+* [[fs]   Семинар 11 - mmap, fork](11sem-fs) [видео](https://www.youtube.com/watch?v=8i77sve9QWk)
+* [[fs]   Семинар 12 - fork](12sem-fs) [видео](https://www.youtube.com/watch?v=A1nsJdVrJq8)
+* [[fs]   Семинар 13 - переменные окружения, exec](13sem-fs)
 
 ## Навигация по темам
 
