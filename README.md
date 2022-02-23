@@ -13,7 +13,7 @@
 8.  [видео][[конспект](8sem-c)][c]                                                    - float/double, union для получение частей float
 9.  [[видео](https://www.youtube.com/watch?v=0hi7nVjlPcQ)][[конспект](9sem-asm)][asm] - векторизованные операции. XMM регистры, inline asm
 10. [[видео](https://www.youtube.com/watch?v=V7PXDmYebl8)][[конспект](10sem-fs)][fs]  - права доступа. симлинки. работа с файлами и директориями
-11. [[видео](https://www.youtube.com/watch?v=8i77sve9QWk)][[конспект](11sem-fs)][fs]  - mmap, fork
+11. [[видео](https://www.youtube.com/watch?v=8i77sve9QWk)][[конспект](11sem-fs)][fs]  - mmap, fork, fork bomb, limits
 12. [[видео](https://www.youtube.com/watch?v=A1nsJdVrJq8)][[конспект](12sem-fs)][fs]  - fork
 13. [видео][[конспект](13sem-fs)][fs]                                                 - переменные окружения, exec
 
