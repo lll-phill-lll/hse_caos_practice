@@ -32,7 +32,7 @@
 * [Посимвольное чтение из файла](6sem-c/input_perf)
 * [Прогресс бар](6sem-c/progress.c)
 * [Уязвимость с перепоолнением буфера](7sem-c/test_overflow.c)
-* [float](8sem-c#%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D1%87%D0%B8%D1%81%D0%B5%D0%BB)
+* [float IEEE-754](8sem-c#%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D1%87%D0%B8%D1%81%D0%B5%D0%BB)
 * [union для float](8sem-c/float_parts.c)
 * [ulimit](11sem-fs#ulimit)
 
