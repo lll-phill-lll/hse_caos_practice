@@ -1,7 +1,14 @@
+/*
+ *  посчитать, сколько создастся процессов (2^(n-1))
+ *  можно запустить так: ./a.out | wc -l и посчитается количество строк вывода (количество процессов)
+ */
+// printf
 #include <stdio.h>
-#include <sys/types.h>
+// getpid
 #include <unistd.h>
+// waitpid
 #include <sys/wait.h>
+#include <sys/types.h>
 
 int main() {
     int n = 4;
@@ -10,11 +17,23 @@ int main() {
         fork();
     }
 
-    printf("%d\n", getpid());
+    /*
+     * i = 0:                      _________parent
+     *                            /         |   |
+     * i = 1:               ____child     _/    |
+     *                     /      |      /      |
+     * i = 2:            child    |    child    |
+     *                     |      |      |      |
+     * i = 3:            child  child  child  child
+     *
+     * На каждом шаге количество процессов будет увеличиваться в
+     * 2 раза (так как каждый уже существующий будет создавать себе ребенка)
+     * В новые процессы будет копироваться счетчик из родителя, поэтому глубина будет одинаковой
+     * На данной картинке в итоге получилось 8 процессов
+     */
 
-    int status;
-    pid_t ch_pid;
-    while ((ch_pid = wait(&status)) > 0);
+    // getpid - узнать свой pid. Также есть getppid - узнать pid родителя
+    printf("%d\n", getpid());
 
     return 0;
 }
