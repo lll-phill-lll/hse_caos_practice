@@ -15,7 +15,7 @@
 10. [[видео](https://www.youtube.com/watch?v=V7PXDmYebl8)][[конспект](10sem-fs)][fs]  - права доступа. симлинки. работа с файлами и директориями
 11. [[видео](https://www.youtube.com/watch?v=8i77sve9QWk)][[конспект](11sem-fs)][fs]  - mmap, fork, fork bomb, limits
 12. [[видео](https://www.youtube.com/watch?v=A1nsJdVrJq8)][[конспект](12sem-fs)][fs]  - fork
-13. [видео][[конспект](13sem-fs)][fs]                                                 - переменные окружения, exec
+13. [[видео](https://www.youtube.com/watch?v=ohPIf5DLeHk)][[конспект](13sem-fs)][fs]  - переменные окружения, exec
 
 ## Навигация по темам
 
