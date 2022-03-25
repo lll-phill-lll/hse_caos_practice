@@ -5,9 +5,10 @@
 * [Примеры работы dup/dup2](dup.c)
 * [Имитируем запуск   ./program < file_in > file_out 2>> file_err](dup_fork.c)
 * [Работа с pipe](pipe_simple.c)
+* [pipe & fork](pipe_fork.c)
 * 
 * [что-то еще](full_example.c)
-* [что-то еще](pipe_fork.c)
+
 * [что-то еще](program.c)
 
 
