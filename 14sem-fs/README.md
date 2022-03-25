@@ -7,7 +7,7 @@
 * [Работа с pipe](pipe_simple.c)
 * [pipe & fork](pipe_fork.c)
 * [невероятный пример](full_example.c)
-* [что-то еще](program.c)
+* [механика второго примера](program.c)
 
 
 #  dup/dup2
