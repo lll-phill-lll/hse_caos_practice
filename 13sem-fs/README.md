@@ -3,10 +3,10 @@
 ## Файлики с кодом:
 
 * [Вывод переменных окружения](envp.c)
+* [getenv.c](getenv.c)
 * [exec.c](exec.c)
 * [exec_fork.c](exec_fork.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
-* [getenv.c](getenv.c)
 * [getenv_test.c](getenv_test.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
 * [putenv.c](putenv.c)
