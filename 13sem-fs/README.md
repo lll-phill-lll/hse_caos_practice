@@ -8,7 +8,7 @@
 * [меняем переменную окружения с putenv](putenv.c)
 * [меняем переменную окружения с setenv](setenv.c)
 * [примеры функций из семейства exec...](exec.c)
-* [exec_fork.c](exec_fork.c)
+* [exec + fork](exec_fork.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
 
