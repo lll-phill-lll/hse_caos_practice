@@ -1,0 +1,15 @@
+# 13 Семинар 01.03.2022 переменные окружения, exec
+
+## Файлики с кодом:
+
+* [envp.c](envp.c)
+* [exec.c](exec.c)
+* [exec_fork.c](exec_fork.c)
+* [exec_fork_cmd.c](exec_fork_cmd.c)
+* [getenv.c](getenv.c)
+* [getenv_test.c](getenv_test.c)
+* [exec_fork_cmd.c](exec_fork_cmd.c)
+* [putenv.c](putenv.c)
+* [setenv.c](setenv.c)
+
+
