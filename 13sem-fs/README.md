@@ -3,7 +3,7 @@
 ## Файлики с кодом:
 
 * [Вывод переменных окружения](envp.c)
-* [getenv.c](getenv.c)
+* [Использование getenv()](getenv.c)
 * [exec.c](exec.c)
 * [exec_fork.c](exec_fork.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
