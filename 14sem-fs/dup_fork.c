@@ -1,18 +1,17 @@
 // example from https://github.com/blackav/hse-caos-2020/tree/master/16-exec
-// ./program < file_in > file_out 2>> file_err
+// пробуем симитировать запуск программы из shell ./program < file_in > file_out 2>> file_err
+// она берет два числа, одно из них печатает в stdout, второе в stderr
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include <fcntl.h>
 
-
 int main() {
-    char stdin_filename[] = "file_in";
-    char stdout_filename[] = "file_out";
-    char stderr_filename[] = "file_err";
+    char stdin_filename[] = "file_in";     // находятся два числа
+    char stdout_filename[] = "file_out";   // хотим одно число сюда
+    char stderr_filename[] = "file_err";   // второе число сюда
 
     pid_t pid = fork();
     if (pid < 0) {
@@ -20,7 +19,7 @@ int main() {
     }
 
     if (!pid) {
-        int fd = open(stdin_filename, O_RDONLY);
+        int fd = open(stdin_filename, O_RDONLY);  // создаем в ребенке
         if (fd < 0) {
             perror("in");
             _exit(1);
@@ -50,7 +49,7 @@ int main() {
         dup2(fd, 2);
         close(fd);   // fd больше не нужен и должен быть закрыт
 
-        execlp("./program", "./program", NULL);
+        execlp("./program", "./program", NULL);   // запускаем нашу программу
         _exit(1);
     }
     wait(NULL);

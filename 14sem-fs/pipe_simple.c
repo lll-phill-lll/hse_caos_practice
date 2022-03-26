@@ -3,68 +3,78 @@
 #include <stdlib.h>
 
 int main() {
-    int fds[2];
-    if (pipe(fds)) {
+    int fds[2];         // массив из файловых дискрипторов
+                        // fds[0] - отвечает за чтение, fds[1] - отвечает за запись
+    if (pipe(fds)) {    // превращаем файловые дискрипторы в канал и ловим ошибку
         perror("pipe");
         exit(1);
     }
-
+/*-------------------------п-р-и-м-е-р--1-----------------------------------------------------------------------------*/
     // write/read
-    // {
-    //     char wbuf[] = "hello";
-    //     char rbuf[6];
+     {
+         char wbuf[] = "hello";
+         char rbuf[6];
 
-    //     write(fds[1], wbuf, sizeof(wbuf));
+         write(fds[1], wbuf, sizeof(wbuf));        // запись, поэтому fds[1]
 
-    //     ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));
-    //     printf("read bytes: %lu\n", read_size);
-    //     int string_len = read_size;
-    //     printf("read from pipe: %.*s\n", string_len, rbuf);
-    // }
+         ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));   // чтение, поэтому fds[0]
+         printf("read bytes: %lu\n", read_size);                 // смотрим сколько прочитали
+         int string_len = read_size;
+         printf("read from pipe: %.*s\n", string_len, rbuf);     // смотрим что прочитали
+     }
 
-    // {
-    //     char wbuf[] = "hello";
-    //     char rbuf[6];
+///*-------------------------п-р-и-м-е-р--2---------------------------------------------------------------------------*/
+//    // зависнет
+//     {
+//         char wbuf[] = "hello";
+//         char rbuf[6];
+//
+//         ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));    // вот тут он ждет пока кто-то что-то не напишет
+//         write(fds[1], wbuf, sizeof(wbuf));
+//         printf("read bytes: %lu\n", read_size);
+//         printf("read from pipe: %s\n", rbuf);
+//     }
 
-    //     ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));
-    //     write(fds[1], wbuf, sizeof(wbuf));
-    //     printf("read bytes: %lu\n", read_size);
-    //     printf("read from pipe: %s\n", rbuf);
-    // }
+///*-------------------------п-р-и-м-е-р--3---------------------------------------------------------------------------*/
+//
+//     {
+//         char wbuf[] = "hello";
+//         char rbuf[6];
+//
+//         close(fds[1]);           // файловый дискриптор, отвечающий за запись закрыт
+//         ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));  // поэтому считывающий fds[0] считает, что все,
+//                                                                // что хотели уже записали и можно закрываться
+//         write(fds[1], wbuf, sizeof(wbuf));
+//         printf("read bytes: %lu\n", read_size);
+//         printf("read from pipe: %s\n", rbuf);
+//     }
 
-    // {
-    //     char wbuf[] = "hello";
-    //     char rbuf[6];
+///*-------------------------п-р-и-м-е-р--4---------------------------------------------------------------------------*/
+//     {
+//         // signal(SIGPIPE, SIG_IGN);
+//         char wbuf[] = "hello";
+//         // close(fds[0]);       // 2) оставим открытым fds[1], но закроем fds[0], тогда тоже буедт ошибка broken pipe
+//         close(fds[1]);          // 1) закрыли файловый дискриптор и пытаемся написать туда что-то, будет bad file descriptor
+//         int res = write(fds[1], wbuf, sizeof(wbuf));
+//         if (res < 0) {
+//             perror("write");
+//         } else {
+//             printf("success\n");
+//         }
+//     }
 
-    //     close(fds[1]);
-    //     ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));
-    //     write(fds[1], wbuf, sizeof(wbuf));
-    //     printf("read bytes: %lu\n", read_size);
-    //     printf("read from pipe: %s\n", rbuf);
-    // }
-
-    // {
-    //     // signal(SIGPIPE, SIG_IGN);
-    //     char wbuf[] = "hello";
-    //     // close(fds[0]);
-    //     close(fds[1]);
-    //     int res = write(fds[1], wbuf, sizeof(wbuf));
-    //     if (res < 0) {
-    //         perror("write");
-    //     } else {
-    //         printf("success\n");
-    //     }
-    // }
-
-    {
-        char wbuf[] = "hello";
-        write(fds[1], wbuf, sizeof(wbuf));
-        char rbuf[2];
-        ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));
-        printf("read bytes: %lu\n", read_size);
-        int string_len = read_size;
-        printf("read from pipe: %.*s\n", string_len, rbuf);
-    }
-
-
+///*-------------------------п-р-и-м-е-р--5---------------------------------------------------------------------------*/
+//
+//    // если считанные данные больше, чем буфер, куда мы записываем,
+//    // то выведется кол-во элементов, равное размеру буфера выода
+//
+//    {
+//        char wbuf[] = "hello";
+//        write(fds[1], wbuf, sizeof(wbuf));
+//        char rbuf[2];
+//        ssize_t read_size = read(fds[0], rbuf, sizeof(rbuf));
+//        printf("read bytes: %lu\n", read_size);
+//        int string_len = read_size;
+//        printf("read from pipe: %.*s\n", string_len, rbuf);       //%.* - ограничивает размер вывода
+//    }
 }
