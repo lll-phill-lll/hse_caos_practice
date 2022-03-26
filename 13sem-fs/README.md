@@ -81,6 +81,6 @@ exit(1);
 chmod +x skript.py
 python3 skript.py  
    /*or*/
-PATH_TO_python3 skript.py 
+/*PATH_TO_python3*/ skript.py 
 ```
 
