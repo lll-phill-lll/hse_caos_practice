@@ -5,12 +5,13 @@
 * [Вывод переменных окружения](envp.c)
 * [Использование getenv()](getenv.c)
 * [плохие вещи с getenv()](getenv_test.c)
+* [меняем переменную окружения с putenv](putenv.c)
+* [меняем переменную окружения с setenv](setenv.c)
 * [exec.c](exec.c)
 * [exec_fork.c](exec_fork.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
-* [putenv.c](putenv.c)
-* [setenv.c](setenv.c)
+
 
 
 ## Переменные окружения
