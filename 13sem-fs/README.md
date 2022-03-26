@@ -10,7 +10,6 @@
 * [примеры функций из семейства exec...](exec.c)
 * [exec + fork](exec_fork.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
-* [exec_fork_cmd.c](exec_fork_cmd.c)
 
 
 
