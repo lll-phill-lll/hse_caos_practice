@@ -2,7 +2,7 @@
 
 ## Файлики с кодом:
 
-* [envp.c](envp.c)
+* [Вывод переменных окружения](envp.c)
 * [exec.c](exec.c)
 * [exec_fork.c](exec_fork.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
