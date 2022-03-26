@@ -10,6 +10,7 @@ int main(int argc, char* argv[]) {
         perror("fork");
         exit(1);
     } else if (!pid) {
+        // просто передаем все тоже самое как в прошлом примере, только через аргументы командной строки
         execvp(argv[1], argv+1);
         perror("exec");
         _exit(1);
