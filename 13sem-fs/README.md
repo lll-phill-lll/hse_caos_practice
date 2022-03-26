@@ -4,7 +4,7 @@
 
 * [Вывод переменных окружения](envp.c)
 * [Использование getenv()](getenv.c)
-* [getenv_test.c](getenv_test.c)
+* [плохие вещи с getenv()](getenv_test.c)
 * [exec.c](exec.c)
 * [exec_fork.c](exec_fork.c)
 * [exec_fork_cmd.c](exec_fork_cmd.c)
