@@ -8,7 +8,7 @@
 
 // как раз функция для записи в файловый дискриптор fd, который передаем функции.
 void fdprint(int fd, char str[], int size) {
-    while (size) {   // крутится пока мы что-то не запишем в дискриптор
+    while (size) {   // крутится пока пока не вычтим все size или пока не сломается
         ssize_t written_size = write(fd, str,  size);
         if (written_size < 0) {
             perror("write");
@@ -43,7 +43,7 @@ int main() {
     fd1 = open("dup_stdout", O_WRONLY|O_CREAT|O_APPEND, S_IRUSR|S_IWUSR);
     fd2 = dup(fd1);          // создаем дубликат fd1, кладем его в fd2
 	// // check error    // dup() возвращает -1, если что-то пошло не так, поэтому тут по хорошему нужно обработать ошибки
-       // // fd2 = fd1;      // так делать плохо, потому что мы копируем сам дискриптор и при закрытии fd1 закроется и fd2
+       // // fd2 = fd1;      // так делать плохо, потому что при закрытии не создастся новый файловый дискриптор
     fdprint(fd1, hello, hello_size);
     fdprint(fd2, hello, hello_size);
     close(fd1);
