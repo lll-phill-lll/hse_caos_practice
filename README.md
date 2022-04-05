@@ -10,7 +10,7 @@
 5.  [[видео](https://www.youtube.com/watch?v=YPteBhvUSWg)][[конспект](5sem-c)][c]     - printf/scanf, выравнивание
 6.  [[видео](https://www.youtube.com/watch?v=rGtolk1oupY)][[конспект](6sem-c)][c]     - работа с файлами, буферизация
 7.  [[видео](https://www.youtube.com/watch?v=XGcy3BW0k_w)][[конспект](7sem-c)][c]     - переполнение буфера, кэш при умножении матриц
-8.  [видео][[конспект](8sem-c)][c]                                                    - float/double, union для получение частей float
+8.  [[видео](https://www.youtube.com/watch?v=F_4nqZTy8Ac)][[конспект](8sem-c)][c]     - float/double, union для получение частей float
 9.  [[видео](https://www.youtube.com/watch?v=0hi7nVjlPcQ)][[конспект](9sem-asm)][asm] - векторизованные операции. XMM регистры, inline asm
 10. [[видео](https://www.youtube.com/watch?v=V7PXDmYebl8)][[конспект](10sem-fs)][fs]  - права доступа. симлинки. работа с файлами и директориями
 11. [[видео](https://www.youtube.com/watch?v=8i77sve9QWk)][[конспект](11sem-fs)][fs]  - mmap, fork, fork bomb, limits
