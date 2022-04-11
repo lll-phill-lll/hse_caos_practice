@@ -18,6 +18,8 @@
 13. [[видео](https://www.youtube.com/watch?v=ohPIf5DLeHk)][[конспект](13sem-fs)][fs]  - переменные окружения, exec
 14. [[видео](https://www.youtube.com/watch?v=h1b9DMZH8uU)][[конспект](14sem-fs)][fs]  - dup, dup2, pipe, dup2+pipe+fork
 15. [[видео](https://www.youtube.com/watch?v=gBL-03voBZM)][[конспект](15sem-fs)][fs]  - сигналы, sigaction
+16. [[видео]()]                                           [[конспект](16sem-fs)][fs]  - сигналы 2
+17. [[видео](https://www.youtube.com/watch?v=SvhKXFCBRA4)][[конспект](17sem-fs)][fs]  - время, mktime, gettimeofday, 2038 год, localtime
 
 ## Навигация по темам
 
