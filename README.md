@@ -16,7 +16,8 @@
 11. [[видео](https://www.youtube.com/watch?v=8i77sve9QWk)][[конспект](11sem-fs)][fs]  - mmap, fork, fork bomb, limits
 12. [[видео](https://www.youtube.com/watch?v=A1nsJdVrJq8)][[конспект](12sem-fs)][fs]  - fork
 13. [[видео](https://www.youtube.com/watch?v=ohPIf5DLeHk)][[конспект](13sem-fs)][fs]  - переменные окружения, exec
-13. [[видео](https://www.youtube.com/watch?v=h1b9DMZH8uU)][[конспект](14sem-fs)][fs]  - dup, dup2, pipe, dup2+pipe+fork
+14. [[видео](https://www.youtube.com/watch?v=h1b9DMZH8uU)][[конспект](14sem-fs)][fs]  - dup, dup2, pipe, dup2+pipe+fork
+15. [[видео](https://www.youtube.com/watch?v=gBL-03voBZM)][[конспект](15sem-fs)][fs]  - сигналы, sigaction
 
 ## Навигация по темам
 
