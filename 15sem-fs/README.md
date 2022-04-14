@@ -2,6 +2,7 @@
 
 ## Файлики с кодом:
 
+* [бесконечный цикл, на котором учимся выкидывать убийственно крутые сигналы](yess.c)
 * [smth](alarm.c)
 * [smth](atomic.c)
 * [smth](block_sigint.c)
@@ -11,6 +12,6 @@
 * [smth](sigaralm_full_2.c)
 * [smth](dsignal_child.c)
 * [smth](signal_race.c)
-* [smth](yess.c)
+
 
 
