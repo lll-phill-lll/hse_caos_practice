@@ -5,8 +5,9 @@
 * [бесконечный цикл, на котором учимся кидать убийственно крутые сигналы](yess.c)
 * [sigaction](sigaction.c)
 * [гонки](signal_race.c)
+* [SIGINT с третьего раза и крутые атомарные переменные](atomic.c)
 * [smth](alarm.c)
-* [smth](atomic.c)
+
 * [smth](block_sigint.c)
 * [smth](sigalarm_full.c)
 * [smth](sigaralm_full_2.c)
@@ -77,12 +78,4 @@ sa.sa_handler = SIG_DFL;
 sa.sa_flags = SA_RESTART;    // передаем флаг -> SA_RESTART (если сигнал поступил, во время какого-то 
                              // системного вызова, то после обработки сигнала системный вызов рестартонется)
 ```
-
-
-
-
-
-
-
-
 
