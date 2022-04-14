@@ -3,10 +3,10 @@
 ## Файлики с кодом:
 
 * [бесконечный цикл, на котором учимся кидать убийственно крутые сигналы](yess.c)
+* [sigaction](sigaction.c)
 * [smth](alarm.c)
 * [smth](atomic.c)
 * [smth](block_sigint.c)
-* [smth](sigaction.c)
 * [smth](sigalarm_full.c)
 * [smth](sigaralm_full_2.c)
 * [smth](dsignal_child.c)
