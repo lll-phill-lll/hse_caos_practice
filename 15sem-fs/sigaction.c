@@ -15,9 +15,11 @@ int main(int argc, char *argv[]) {
     }
     struct sigaction sa = {};
     sa.sa_handler = handler;        // подкладываем вместо SIGINT -> handler
-    // sa.sa_handler = SIG_IGN;     // подкладываем вместо SIGINT -> SIG_IGN
-    // sa.sa_handler = SIG_DFL;     // подкладываем вместо SIGINT -> SIG_DFL
-    // sa.sa_flags = SA_RESTART;    // подкладываем вместо SIGINT -> SA_RESTART
+    // sa.sa_handler = SIG_IGN;     // подкладываем вместо SIGINT -> SIG_IGN (дефолтный хендлер-игнорщик)
+    // sa.sa_handler = SIG_DFL;     // подкладываем вместо SIGINT -> SIG_DFL (еще один дефолтный хендлер)
+    // sa.sa_flags = SA_RESTART;    // передаем флаг -> SA_RESTART (если сигнал поступил,
+                                    // во время какого-то системного вызова, то после обработки сигнала системный вызов
+                                    // рестартонется)
     sigaction(SIGINT, &sa, NULL);
 
     int delay = atoi(argv[1]);
