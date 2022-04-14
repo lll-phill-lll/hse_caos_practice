@@ -6,14 +6,8 @@
 * [sigaction](sigaction.c)
 * [гонки](signal_race.c)
 * [SIGINT с третьего раза и крутые атомарные переменные](atomic.c)
-* [smth](alarm.c)
-
-* [smth](block_sigint.c)
-* [smth](sigalarm_full.c)
-* [smth](sigaralm_full_2.c)
-* [smth](dsignal_child.c)
-
-
+* [откладываем сигналы](block_sigint.c)
+* [TODO](dsignal_child.c)
 
 #  сигналы
 
