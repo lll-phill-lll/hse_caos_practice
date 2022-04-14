@@ -4,13 +4,14 @@
 
 * [бесконечный цикл, на котором учимся кидать убийственно крутые сигналы](yess.c)
 * [sigaction](sigaction.c)
+* [гонки](signal_race.c)
 * [smth](alarm.c)
 * [smth](atomic.c)
 * [smth](block_sigint.c)
 * [smth](sigalarm_full.c)
 * [smth](sigaralm_full_2.c)
 * [smth](dsignal_child.c)
-* [smth](signal_race.c)
+
 
 
 #  сигналы
