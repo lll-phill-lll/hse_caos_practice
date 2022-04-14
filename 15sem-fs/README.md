@@ -6,7 +6,6 @@
 * [smth](alarm.c)
 * [smth](atomic.c)
 * [smth](block_sigint.c)
-* [smth](core)
 * [smth](sigaction.c)
 * [smth](sigalarm_full.c)
 * [smth](sigaralm_full_2.c)
@@ -37,5 +36,7 @@ kill -SIGCONT (id)
 ```
 kill -SIGKILL (id) 
 ```
+
+^\ это тоже самое, что и -SIGQUIT - оставляет с собой coredump (ядро создаёт дамп памяти процесса, если он выполнил недопустимую операцию, и должен быть остановлен) и создается [core](core)
 
 
