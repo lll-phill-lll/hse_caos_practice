@@ -1,0 +1,233 @@
+# 5 ****Семинар 30.11.2021 printf/scanf, выравнивание, запись в файл****
+
+## Вывод
+
+- Для того, чтобы что-то напечатать, нужно обязательно указывать, какой тип данных мы хотим напечатать
+- В конце сишной строчки обязательно стоит `\0`
+- В `printf` есть форматная строка, которая как бы показывает шаблон, по которому будут выводиться данные
+- У `float` можно менять количество цифр после запятой
+
+```jsx
+char c = 'c';
+    int i = 100;
+    unsigned u = 12;
+    float f = 12.22;
+
+    char str[] = "hello world";
+
+    printf("%c\n", c);
+    printf("%d\n", c);
+    printf("%d\n", i);
+    // what number
+    printf("%d\n", str);
+    printf("%u\n", u);
+    printf("%f\n", f);
+    printf("%.2f\n", f);
+
+    printf("%d, `%c\n", c, i);
+```
+
+- Спецификаторы и переменные должны быть в одном и том же порядке
+
+## Ввод
+
+- Правила такие же, но обязательно нужно  указывать тот кусок памяти, куда мы это считываем
+
+```c
+char c;
+    int i;
+    unsigned u;
+    char s[64];
+
+    scanf("%c", &c);
+    printf("%c\n", c);
+
+    scanf("%d", &i);
+    printf("%d\n", i);
+
+    scanf("%u", &u);
+    printf("%u\n", u);
+
+    scanf("%s", s);
+    printf("%s\n", s);
+```
+
+- *Массив — указатель на первый элемент, поэтому рядом с ним нет `&`*
+
+## Структуры
+
+- Все структуры выравниваются
+- Все поля лежат по порядку в памяти
+- какие-то архитектуры требуют выравнивания для всех данных
+- Выравнивание происходит по самому большому полю
+- Выравнивание влияет на скорость
+
+```c
+struct s1 {
+    char ch;
+};
+```
+
+- Размер равен `1`
+
+```c
+struct s1_1 {
+    char ch;
+};
+```
+
+- Размер равен `2`
+
+```c
+struct s2 {
+    char ch;
+    int i;
+};
+```
+
+- Размер равен `8`
+
+```c
+struct s3 {
+    char ch1;
+    int i;
+    char ch2;
+};
+```
+
+- Размер равен `12`
+
+```c
+struct s4 {
+    char ch1;
+    char ch2;
+    int i;
+};
+```
+
+- Размер равен `8`
+
+```c
+struct s5 {
+    int i;
+    long long l;
+};
+```
+
+- Размер равен `16` (`12` на 32бит потому что размер машинного слова 4 и по 4 мы и выравниваем)
+
+```c
+struct s6 {
+    int i;
+    short s[2];
+};
+```
+
+- массив то же самое, что последовательные `short`
+- Размер равен `8`
+
+```c
+struct s7 {
+    int i;
+    short s[3];
+};
+```
+
+- Размер равен `12`
+
+## Тест скорости
+
+```c
+#include <stdio.h>
+
+struct S_p {
+    unsigned char c1;
+    unsigned int i1;
+    unsigned char c2;
+    unsigned int i2;
+}__attribute__((packed));
+
+struct S_a {
+    unsigned char c1;
+    unsigned int i1;
+    unsigned char c2;
+    unsigned int i2;
+};
+
+struct S_p s;
+
+int main() {
+    printf("%ld %ld\n", sizeof(struct S_p), sizeof(struct S_a));
+    for (unsigned i = 0; i != 100000000; ++i) {
+        for (unsigned j = 0; j != 10; ++j) {
+            s.c1 += 1;
+            s.i1 += 1;
+            s.c2 += 1;
+            s.i2 += 1;
+        }
+    }
+}
+```
+
+- В первой структуре отключено выравнивание и размер ее будет `10`
+- Во второй есть выравнивание и она занимает `16`
+- А далее просто прибавляем единички к полям
+- На некоторых архитектурах разницы во времени почти нет `2.007` и `2.032`, но на каких-то может быть кардинально быстрее
+- **Напомним: *перепелнение `unsigned` — норма, переполнение `signed` — УБ***
+
+## Сочно
+
+Эта программа записывает в файлик то, что мы пишем в stdin
+
+```c
+enum {BUF_SIZE = 8};
+
+int main(int argc, char* argv[]) {
+    // argv[0] = "./a.out"
+    if (argc < 2) {
+        fprintf(stderr, "expected filename\n");
+        exit(1);
+    }
+    int fd = open(argv[1], O_WRONLY|O_CREAT|O_TRUNC, S_IRUSR|S_IWUSR);
+    if (fd < 0) {
+        fprintf(stderr, "failed open file\n");
+        exit(1);
+    }
+    char buf[BUF_SIZE];
+    ssize_t input_size;
+    while ((input_size = read(STDIN_FILENO, buf, BUF_SIZE)) != 0) {
+        if (input_size < 0) {
+            fprintf(stderr, "failed read\n");
+            exit(1);
+        }
+        // think about small write
+        ssize_t output_size = write(fd, buf, input_size);
+        if (output_size != input_size) {
+            fprintf(stderr, "failed write\n");
+            exit(1);
+        }
+    }
+    int close_res = close(fd);
+    if (close_res == -1) {
+        fprintf(stderr, "failed write\n");
+        exit(1);
+    }
+    return 0;
+}
+```
+
+- `argv[0]` - всегда имя программы, которую мы запускаем
+- Флаги открытия файлов:
+    - *O_WRONLY* — пишем
+    - *O_CREAT* — создаем (если его нет)
+    - *O_APPEND* — дописываем
+    - *O_TRUNC* — удалим то, что было и пишем что-то заново
+- Права открытия файла:
+    - *S_IRUSR*
+    - *S_IWUSR*
+- Если удалось открыть корректно, то файловый дескриптор больше нуля
+- Буффер нужен для снижения количества системных вызовов
+- Сколько запросили и сколько считали — разные числа (аналогично с `write`)
+- Если считанное отрицательно, то это ошибка
+- Обязательно закрываем файловый дескриптор
+- **Константы в `enum` для безопастности**
