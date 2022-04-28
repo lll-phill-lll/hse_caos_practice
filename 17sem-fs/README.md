@@ -68,8 +68,11 @@ time_t mktime(struct tm *tmptr);
 #include <time.h>
 char *asctime(const struct tm *tmptr);
 char *ctime(const time_t *calptr);
+char *asctime_r(const struct tm *tm, char *buf);
+char *ctime_r(const time_t *timep, char *buf);
 ```
-Превращает структуру tm или time_t в строку
+Превращает структуру tm или time_t в строку \
+Функции с суффиксом `r` отличаются от обычных тем, что `asctime` принимает в себя только `struct tm` или `time_t`. То есть функции без суффикса `r` используют какой-то внутренний буффер. А чтобы применить Функции с суффиксом `r`, пользователю нужно сам задать буффер. Например, `char[] buff;`. 
 
 #### strftime
 ```c
