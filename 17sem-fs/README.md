@@ -1,14 +1,14 @@
 # 17 Семинар 05.04.2022 Time
 ## Файлики с кодом:
-* [Простой пример функции time](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/time.c)
-* [Пример структуры tm, функции mktime](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/localtime.c)
-* [Пример функции asctime](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/asctime.c)
-* [Пример переполнения времени](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/localtime_overflow.c)
-* [Пример функции asctime-2](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/asctime_change.c)
-* [Пример функции strftime](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/strtime.c)
-* [Пример функции strptime](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/strptime.c)
-* [Пример структуры timeval и функции gettimeofday](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/gettimeofday.c)
-* [Пример функции clock_gettime](https://github.com/lll-phill-lll/hse_caos_207_seminars/blob/master/17sem-fs/clock_gettime.c)
+* [Простой пример функции time](time.c)
+* [Пример структуры tm, функции mktime](localtime.c)
+* [Пример функции asctime](asctime.c)
+* [Пример переполнения времени](localtime_overflow.c)
+* [Пример функции asctime-2](asctime_change.c)
+* [Пример функции strftime](strtime.c)
+* [Пример функции strptime](strptime.c)
+* [Пример структуры timeval и функции gettimeofday](gettimeofday.c)
+* [Пример функции clock_gettime](clock_gettime.c)
 
 ## Структуры timeval и tm
 ```c
