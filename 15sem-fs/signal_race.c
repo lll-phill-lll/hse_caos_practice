@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// структура с полями
 struct somedata {
     int a;
     int b;
@@ -19,8 +20,8 @@ void handler(int n) {
     str[11] = sd.b % 10 + '0';
     str[17] = sd.c / 10 + '0';
     str[18] = sd.c % 10 + '0';
-    write(STDOUT_FILENO, str, sizeof(str) - 1);
-
+    write(STDOUT_FILENO, str, sizeof(str) - 1); // печатает поля, print не подходит для hendler. ОПАСНО!
+    // увеличивает каждое поле на 1
     sd.a++;
     sleep(1);
     sd.b++;
@@ -31,12 +32,15 @@ void handler(int n) {
 int main() {
     struct sigaction sa = {};
     sa.sa_handler = handler;
+    // присваиваем флаг -> SA_NODEFER, если отправляем сигнал, во время того, как предыдущий
+    // такой же сигнал еще не закончит обработку, то мы будет заново попадать в обработчик.
     sa.sa_flags = SA_NODEFER;
     sigaction(SIGINT, &sa, NULL);
 
     int counter = 1;
 
     while(1) {
+
         sleep(1);
         sd.a++;
         sleep(1);
@@ -46,3 +50,8 @@ int main() {
         printf("[%d] a: %d, b: %d, c: %d\n", getpid(), sd.a, sd.b, sd.c);
     }
 }
+
+// если часто и быстро вызывать SIGINT, то значение в a растет и уходит вперед
+// (стек выглядит как куча незаконченных хендлеров, которые по очереди выполняются).
+// все значения рано или поздно выровнятся и пойдут печататься дальше.
+
