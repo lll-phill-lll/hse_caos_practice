@@ -17,7 +17,8 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
-    int fd = open(argv[1], O_WRONLY|O_CREAT|O_APPEND, S_IRUSR|S_IWUSR);
+    int fd = open(argv[1], O_WRONLY/*пишем*/|O_CREAT/*создаем*/|O_APPEND/*дописываем*/, S_IRUSR|S_IWUSR);
+    // Если удалось открыть корректно, то файловый дескриптор больше нуля
     if (fd < 0) {
         fprintf(stderr, "failed open file\n");
         exit(1);
@@ -26,6 +27,7 @@ int main(int argc, char* argv[]) {
     char buf[BUF_SIZE];
 
     ssize_t input_size;
+    // Сколько запросили и сколько считали — разные числа
     while ((input_size = read(STDIN_FILENO, buf, BUF_SIZE)) != 0) {
         if (input_size < 0) {
             fprintf(stderr, "failed read\n");
@@ -40,6 +42,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    // Обязательно закрываем файловый дескриптор
     int close_res = close(fd);
     if (close_res == -1) {
         fprintf(stderr, "failed write\n");

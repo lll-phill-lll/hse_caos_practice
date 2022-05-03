@@ -8,14 +8,14 @@ int main() {
 
     char str[] = "hello world";
 
-    printf("%c\n", c);
-    printf("%d\n", c);
-    printf("%d\n", i);
-    // what number
-    printf("%d\n", str);
-    printf("%u\n", u);
-    printf("%f\n", f);
-    printf("%.2f\n", f);
+    printf("%c\n", c); // char
+    printf("%d\n", c); // digit
+    printf("%d\n", i); // digit
+    // what number -- мусор
+    printf("%d\n", str); // digit
+    printf("%u\n", u); // unsigned
+    printf("%f\n", f); // float
+    printf("%.2f\n", f);  // float 2 знака после запятой
 
     printf("%d, `%c\n", c, i);
 }
