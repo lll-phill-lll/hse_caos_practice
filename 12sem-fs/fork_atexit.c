@@ -28,6 +28,7 @@ void write_to_file(pid_t pid) {
         return;
     }
 
+    // Закрываем файл всегда после выхода
     if (close(fd) == -1) {
         perror(perror_str);
         return;
@@ -47,6 +48,7 @@ void delete_file() {
 
 int main() {
 
+    // указанная функция вызыва­ется в конце выполнения программы
     atexit(delete_file);
 
     pid_t parent_pid = getpid();
@@ -57,12 +59,16 @@ int main() {
     if (fork() == 0) {
         pid_t child_pid = getpid();
         printf("Child pid: %d\n", child_pid);
+        // Вообще мы открываем файл, здороваемся с миром в этом файле, 
+        // если не удалось, печатаем ошибку, иначе говорим, что всё хорошо
+        // и печатаем ID процесса, который ее вызвал. 
+        // При каждом вызове функции будем открывать и закрывать файл.
         write_to_file(child_pid);
         sleep(2);
-        _exit(0);
+        _exit(0); // ВЫВОД В РИДМИ
     }
 
-    wait(NULL);
+    wait(NULL); // ждет любого ребенка
 
     write_to_file(parent_pid);
 
