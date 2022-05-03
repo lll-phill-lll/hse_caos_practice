@@ -13,7 +13,7 @@ int main() {
     };
 
     while (1) {
-        int res = waitpid(pid, NULL, WNOHANG);
+        int res = waitpid(pid, NULL, WNOHANG /*не ждать, если не завершился процесс*/);
         if (res == -1) {
             perror("");
             exit(1);
@@ -23,7 +23,7 @@ int main() {
             printf("waiting 1 sec\n");
             sleep(1);
         } else {
-            printf("child finished\n");
+            printf("child finished\n"); // ВЫВОД В РИДМИ
             break;
         }
     }
