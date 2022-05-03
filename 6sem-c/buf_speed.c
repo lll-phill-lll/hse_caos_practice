@@ -19,10 +19,10 @@ int main() {
 
     unsigned iters = 10000000;
 
-    print(iters);
+    print(iters); // с буффером намного быстрее
 
     setbuf(stdout, NULL);
 
-    print(iters);
+    print(iters); // а так сильно медленнее
 
 }

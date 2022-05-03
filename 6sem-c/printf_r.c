@@ -5,7 +5,7 @@ void print_hello() {
     printf("%s", "Hello world");
     fflush(stdout);
     sleep(1);
-    printf("\r");
+    printf("\r"); // \r двигает каретку в начало
     fflush(stdout);
     sleep(1);
     printf("%15s lala\n %d fgdjhg \n \r 8989", "smth", 5);
