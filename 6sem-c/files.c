@@ -7,10 +7,10 @@ enum {
 
 int main(int argc, char* argv[]) {
 
-    FILE* file = fopen(argv[1], "r");
+    FILE* file = fopen(argv[1], "r"); // хотим уметь только читать
 
 	if (file == NULL) {
-        perror("lala");
+        perror("lala"); // более осмысленная ошибка
         exit(1);
     }
 
@@ -20,12 +20,14 @@ int main(int argc, char* argv[]) {
     sscanf(argv[3], "%ld", &y);
 
     long offset = y * (N + 1) + x;
+
+    // выставляет filepointer в нужное место
     if (fseek(file, offset, SEEK_SET) != 0) {
         perror("fseek");
         exit(1);
     }
 
-    char c = fgetc(file);
+    char c = fgetc(file); // для того, чтобы считать char
     if (c == '1') {
         printf("Found\n");
     } else {
