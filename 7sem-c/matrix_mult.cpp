@@ -19,7 +19,7 @@ std::vector<std::vector<int>> mat_multiplication(const std::vector<std::vector<i
         }
         for (int j = 0; j < b[0].size(); ++j) {
             for (int k = 0; k < a[0].size(); ++k)
-                c[i][j] += a[i][k] * b[k][j];
+                c[i][j] += a[i][k] * b[k][j]; // ТАК НЕ ПИСАТЬ
         }
     }
 
@@ -37,7 +37,7 @@ std::vector<std::vector<int>> tr_mat_multiplication(const std::vector<std::vecto
         }
         for (int j = 0; j < b[0].size(); ++j) {
             for (int k = 0; k < a[0].size(); ++k)
-                c[i][j] += a[i][k] * b[j][k];
+                c[i][j] += a[i][k] * b[j][k]; //// ПИСАТЬ ТАК
         }
     }
     return c;

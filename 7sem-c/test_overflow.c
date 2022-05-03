@@ -6,7 +6,11 @@ int main() {
     char password[9] = "password";
 
     scanf("%s", input);
-
+/*
+Если ввести:
+"\x00aaaaaaaa\x00"
+то нам разрешат войти
+*/
     if (strcmp(input, password) == 0) {
         printf("Access granted\n");
     } else {
