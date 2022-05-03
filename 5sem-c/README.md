@@ -71,14 +71,6 @@ struct s1 {
 - Размер равен `1`
 
 ```c
-struct s1_1 {
-    char ch;
-};
-```
-
-- Размер равен `2`
-
-```c
 struct s2 {
     char ch;
     int i;
@@ -101,6 +93,17 @@ struct s3 {
 struct s4 {
     char ch1;
     char ch2;
+    int i;
+};
+```
+
+- Размер равен `8`
+
+```c
+struct s4_2 {
+    char ch1;
+    char ch2;
+    short s;
     int i;
 };
 ```
