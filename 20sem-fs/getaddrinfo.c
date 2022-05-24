@@ -27,14 +27,14 @@ int main(int argc, char* argv[]) {
                 printf("\taddress: %s, port: %hu\n",
                     inet_ntop(ai->ai_family, &inet->sin_addr,
                         buf, sizeof(buf)),
-                    htons(inet->sin_port));
+                    ntohs(inet->sin_port));
                 break;
             case AF_INET6:
                 inet6 = (struct sockaddr_in6 *)ai->ai_addr;
-                printf("\taddress: %s, port: %hu\n",
+                printf("\taddress: %s, port: %u\n",
                     inet_ntop(ai->ai_family, &inet6->sin6_addr,
                         buf, sizeof(buf)),
-                    htons(inet6->sin6_port));
+                    ntohs(inet6->sin6_port));
                 break;
             default:
                 printf("\tunknown address family\n");
