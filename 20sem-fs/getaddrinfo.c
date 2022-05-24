@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
                 break;
             case AF_INET6:
                 inet6 = (struct sockaddr_in6 *)ai->ai_addr;
-                printf("\taddress: %s, port: %u\n",
+                printf("\taddress: %s, port: %hu\n",
                     inet_ntop(ai->ai_family, &inet6->sin6_addr,
                         buf, sizeof(buf)),
                     ntohs(inet6->sin6_port));
