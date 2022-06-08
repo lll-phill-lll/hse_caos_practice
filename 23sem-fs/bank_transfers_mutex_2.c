@@ -11,7 +11,7 @@ typedef struct {
     int balance;
     char name[20];
 
-    pthread_mutex_t m;
+    pthread_mutex_t m; // положим mutex прям во внутрь структуры, значит для каждого аккаунта понадобиться отдельный mutex
 } Account;
 
 Account family_account;
@@ -37,6 +37,7 @@ void take_money(Account* account, int amount) {
 }
 
 void transfer(Account* from_account, Account* to_account, int amount) {
+    // блокируем два mutex-а, откуда хотим снять деньги и куда хотим зачислить
     pthread_mutex_lock(&from_account->m);
     pthread_mutex_lock(&to_account->m);
 
@@ -76,10 +77,12 @@ int main() {
     strcpy(gas_station_account.name, "GAS\0");
     strcpy(family_account.name, "FAM\0");
 
+    // закомитенная часть ниже позволяет заблокировать и разблокировать потоки рекурсивно
     // pthread_mutexattr_t attr;
     // pthread_mutexattr_init(attr);
     // pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
 
+    // инициализируем mutex-ы для каждого аккаунта
     pthread_mutex_init(&mall_account.m, NULL);
     pthread_mutex_init(&family_account.m, NULL);
     pthread_mutex_init(&gas_station_account.m, NULL);
@@ -98,6 +101,7 @@ int main() {
     pthread_join(husband_pid, NULL);
 
     print_accounts();
+
 
     pthread_mutex_destroy(&mall_account.m);
     pthread_mutex_destroy(&family_account.m);
