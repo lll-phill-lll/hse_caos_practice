@@ -4,7 +4,7 @@
 
 * [Создаем простой банк](bank_add_simple.c)
 * [Добавляем потоков](bank_add_threads.c)
-* [Работа с pipe](pipe_simple.c)
+* [Добавляем еще и вывод](bank_safe.c)
 * [pipe & fork](pipe_fork.c)
 * [невероятный пример](full_example.c)
 * [механика второго примера](program.c)
