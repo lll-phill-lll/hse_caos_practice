@@ -4,8 +4,8 @@
 
 * [Создаем простой банк](bank_add_simple.c)
 * [Добавляем потоков](bank_add_threads.c)
-* [Добавляем еще и вывод](bank_safe.c)
-* [pipe & fork](pipe_fork.c)
+* [Добавляем еще и вывод средств](bank_safe.c)
+* сделали 3 счет](bank_transfers.c)
 * [невероятный пример](full_example.c)
 * [механика второго примера](program.c)
 
