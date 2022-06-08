@@ -19,7 +19,7 @@ void add_money(Account* account, int amount) {
     printf("%d\n", prev);
 }
 
-void take_money(Account* account, int amount) {
+void take_money(Account* account, int amount) { // снимаем деньги
     int prev = atomic_fetch_sub(&account->balance, amount);
     printf("%d\n", prev);
 }
@@ -45,14 +45,14 @@ void* process_take(void* smth) {
 }
 
 int main() {
-    Account account = { 0 };
+    Account account = {0};
     print_account(account);
 
     pthread_t tids_add[N];
     pthread_t tids_take[N];
-    for (int i = 0; i != N; ++i) {
-        pthread_create(&tids_add[i], NULL, process_add, (void *)&account);
-        pthread_create(&tids_take[i], NULL, process_take, (void *)&account);
+    for (int i = 0; i != N; ++i) { // создаем 5 dads и 5 sons, у них общий счет
+        pthread_create(&tids_add[i], NULL, process_add, (void *) &account);
+        pthread_create(&tids_take[i], NULL, process_take, (void *) &account);
     }
 
     for (int i = 0; i != N; ++i) {
