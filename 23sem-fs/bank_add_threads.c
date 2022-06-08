@@ -6,7 +6,9 @@
 #define N 5
 
 typedef struct {
-    int balance;
+    // добавляем атомарную переменную
+    _Atomic int balance;
+    // // int balance; так себе вариант, если не использовать функцию atomic_fetch_add
 } Account ;
 
 void print_account(Account account) {
@@ -14,9 +16,9 @@ void print_account(Account account) {
 }
 
 void add_money(Account* account, int amount) {
-    atomic_fetch_add(&account->balance, amount);
+    // atomic_fetch_add(&account->balance, amount);
 
-    // account->balance += amount;
+    account->balance += amount;
 }
 
 void* process(void* smth) {
@@ -34,9 +36,11 @@ int main() {
 
     pthread_t tids[N];
     for (int i = 0; i != N; ++i) {
+        // создаем потоки,
         pthread_create(&tids[i], NULL, process, (void *)&account);
     }
 
+    // ждем каждый поток
     for (int i = 0; i != N; ++i) {
         pthread_join(tids[i], NULL);
     }
