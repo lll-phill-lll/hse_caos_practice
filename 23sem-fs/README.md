@@ -7,7 +7,7 @@
 * [Добавляем еще и вывод средств](bank_safe.c)
 * [еще одна банковская структура, 2 счета зачисления и 1 счет чтобы тратить](bank_transfers.c)
 * [+mutex](bank_transfers_mutex.c)
-* [еще один вариант mutex-а](/bank_transfers_mutex_2.c)
+* [еще один вариант mutex-а](bank_transfers_mutex_2.c)
 * [механика второго примера](program.c)
 
 #  создаем потоки
