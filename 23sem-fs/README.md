@@ -3,7 +3,7 @@
 ## Файлики с кодом:
 
 * [Создаем простой банк](bank_add_simple.c)
-* [Имитируем запуск   ./program < file_in > file_out 2>> file_err](dup_fork.c)
+* [Добавляем потоков](bank_add_threads.c)
 * [Работа с pipe](pipe_simple.c)
 * [pipe & fork](pipe_fork.c)
 * [невероятный пример](full_example.c)
