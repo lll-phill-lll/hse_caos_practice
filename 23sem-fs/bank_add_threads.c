@@ -8,7 +8,7 @@
 typedef struct {
     // добавляем атомарную переменную
     _Atomic int balance;
-    // // int balance; так себе вариант, если не использовать функцию atomic_fetch_add
+    // // int balance; так себе вариант, все будет препутываться, иногда выполняться непоследовательно 
 } Account ;
 
 void print_account(Account account) {
@@ -16,7 +16,7 @@ void print_account(Account account) {
 }
 
 void add_money(Account* account, int amount) {
-    // atomic_fetch_add(&account->balance, amount);
+    // atomic_fetch_add(&account->balance, amount); // вот как раз атомарная функция сложения
 
     account->balance += amount;
 }
