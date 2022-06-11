@@ -6,8 +6,9 @@ void func(std::promise<int> p) {
     try {
         throw std::logic_error("hello");
     } catch (...) {
-        // set exception also can except
-        p.set_exception(std::current_exception());
+        // set_exception тоже может кидать exception.
+        p.set_exception(std::current_exception()); // Нужно в promise записать exception
+        // current_exception - то исключение, которое сейчас случилось.
     }
 }
 
@@ -17,7 +18,8 @@ int main() {
     std::future<int> f = p.get_future();
 
     std::thread thr(func, std::move(p));
-
+    
+    // поймаем исключение
     try {
         f.get();
     } catch (...) {
