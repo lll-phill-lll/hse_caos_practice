@@ -14,6 +14,8 @@ int main() {
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
     int i = 0;
+
+    /*Создаем потоки пока можем*/
     while(1) {
         pthread_t tid;
         int res = pthread_create(&tid, &attr, func, NULL);
