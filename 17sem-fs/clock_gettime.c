@@ -4,7 +4,7 @@
 
 int main() {
     struct timespec ts;
-
+    // с помощью clock_gettime мы получаем более точное время
     clock_gettime(CLOCK_REALTIME, &ts);
     // clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &ts);
 
