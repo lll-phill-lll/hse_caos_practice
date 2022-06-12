@@ -4,7 +4,7 @@
 
 /* Как получить значения, которые возвращаются из функции?
 Для этого создаем promise и future. Они работают аналогично каналу. 
-В promise будем писать, из future - забирать
+В promise будем записывать, из future - забирать
 */
 
 void func(std::promise<int> p) {
@@ -15,7 +15,7 @@ int main() {
     std::promise<int> p;
     std::future<int> f = p.get_future();
 
-    std::thread thr(func, std::move(p)); // в thread передаем promise, чтобы thread знал, куда писать
+    std::thread thr(func, std::move(p)); // в thread передаем promise, чтобы thread знал, куда записать
     // promise нельзя скопировать, поэтому используем move.
 
     int res = f.get(); // забираем значение от future
