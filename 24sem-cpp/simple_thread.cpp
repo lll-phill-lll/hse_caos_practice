@@ -8,8 +8,8 @@ void thread_func() {
 int main() {
     std::thread thr(thread_func);
 
-    thr.join(); // Обязательно делать join, иначе будет ошибка типа "Aborted (Core dumped)"
+    thr.join(); // Обязательно использовать join, иначе будет ошибка типа "Aborted (Core dumped)"
     
     // std::thread thr2 = thr -- ОШИБКА!
-    // Нельзя скопировать threads, потому что иначе будет ошибка типа "Use of deleted function"
+    // Нельзя копировать threads, потому что иначе будет ошибка типа "Use of deleted function"
 }
