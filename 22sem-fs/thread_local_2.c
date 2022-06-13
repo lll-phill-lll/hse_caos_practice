@@ -15,10 +15,18 @@ void* func(void* smth) {
 int main() {
     pthread_t tids[N];
     for (int i = 0; i != N; ++i) {
+    	/*
+    	  int pthread_create(pthread_t *restrict thread,
+                          const pthread_attr_t *restrict attr,
+                          void *(*start_routine)(void *),
+                          void *restrict arg);
+
+    	*/
         pthread_create(&tids[i], NULL, func, NULL);
     }
 
     for (int i = 0; i != N; ++i) {
+        /* Дожидаемся выполнения каждого потока. Всего их будет n+1 так как еще main */
         pthread_join(tids[i], NULL);
     }
 }

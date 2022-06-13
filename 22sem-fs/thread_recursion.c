@@ -22,6 +22,7 @@ int main() {
     pthread_attr_setstacksize(&attr, sysconf(_SC_THREAD_STACK_MIN));
     pthread_attr_setguardsize(&attr, 0);
 
+    /* создаем кучу потоков с рекурсией и ждем сегфолта */
     for (int i = 0; i != N; ++i) {
         pthread_create(&tids[i], &attr, func, NULL);
     }
