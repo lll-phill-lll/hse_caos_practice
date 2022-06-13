@@ -12,7 +12,7 @@ typedef struct {
     char name[20];
 } Account;
 
-pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER; // инициализируем
 
 Account family_account;
 Account mall_account;
@@ -37,8 +37,8 @@ void take_money(Account* account, int amount) {
 }
 
 void transfer(Account* from_account, Account* to_account, int amount) {
-    pthread_mutex_lock(&m);
-    // pthread_mutex_trylock(&m);
+    pthread_mutex_lock(&m); // lock the mutex, поток ждет, пока не разлочат
+    // pthread_mutex_trylock(&m); эта функция помогает заниматься другими делами во время lock-a
 
     int allow_transaction = from_account->balance >= amount;
     // sleep(1);
@@ -51,7 +51,8 @@ void transfer(Account* from_account, Account* to_account, int amount) {
         printf("cant transfer %d from %s(%d) to %s(%d)\n", amount, from_account->name,from_account->balance, to_account->name, to_account->balance);
     }
 
-    pthread_mutex_unlock(&m);
+    pthread_mutex_unlock(&m); // unlock the mutex
+    // если lock-ать в одном потоке и unlock-ать в другом, тоже UB
 }
 
 void* wife(void* smth) {
@@ -86,4 +87,5 @@ int main() {
     pthread_join(husband_pid, NULL);
 
     print_accounts();
+
 }

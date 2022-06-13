@@ -12,9 +12,9 @@ typedef struct {
     char name[20];
 } Account;
 
-Account family_account;
-Account mall_account;
-Account gas_station_account;
+Account family_account;       // банковский аккаунт семьи, из которого идет вывод средств
+Account mall_account;         // аккаунт магазина
+Account gas_station_account;  // аккаунт заправки
 
 void print_accounts() {
     printf("+---------------+\n");
@@ -34,9 +34,11 @@ void take_money(Account* account, int amount) {
     atomic_fetch_sub(&account->balance, amount);
 }
 
+// решение проблемы в том, чтобы разрешить выполнять функцию transfer только одному процессу
 void transfer(Account* from_account, Account* to_account, int amount) {
     int allow_transaction = from_account->balance >= amount;
-    if (allow_transaction) {
+    // проблема здесь в том, что после проверки может проскочить чья-то покупка и тогда у нас будет недостаточно средств для покупки
+    if (allow_transaction) { // проверяем, хватает ли денег на покупку
         printf("transfering %d from %s(%d) to %s(%d)\n", amount, from_account->name,from_account->balance, to_account->name, to_account->balance);
 
         take_money(from_account, amount);
@@ -71,7 +73,7 @@ int main() {
 
     print_accounts();
 
-    pthread_t wife_pid, husband_pid;
+    pthread_t wife_pid, husband_pid; // два потока
     pthread_create(&wife_pid, NULL, wife, NULL);
     pthread_create(&husband_pid, NULL, husband, NULL);
 
