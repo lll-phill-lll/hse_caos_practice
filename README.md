@@ -48,4 +48,3 @@
 ## Файлы
 
 * [C11 стандарт](C11_standard.pdf)
-* [Simpleio](simpleio_i686.S)
