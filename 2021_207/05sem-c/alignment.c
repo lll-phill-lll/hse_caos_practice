@@ -14,13 +14,22 @@ struct s1 {
 
 struct s2 {
     char ch;
+    // char
+    // char
+    // char
     int i;
 }; // Размер равен 8
 
 struct s3 {
     char ch1;
+    // char
+    // char
+    // char
     int i;
     char ch2;
+    // char
+    // char
+    // char
 }; // Размер равен 12
 
 struct s4 {
@@ -39,7 +48,7 @@ struct s4_2 {
 struct s5 {
     int i;
     long long l;
-}; // Размер равен 16
+}; // Размер равен 12
 
 struct s6 {
     int i;
@@ -49,6 +58,7 @@ struct s6 {
 struct s7 {
     int i;
     short s[3];
+    // short
 }; // Размер равен 12
 
 int main() {
