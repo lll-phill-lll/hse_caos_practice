@@ -13,6 +13,7 @@
 2. [Регистры, иструкции, флаги, переходы](https://github.com/lll-phill-lll/hse_caos_practice/tree/master/2022_216/01sem-asm#%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D1%8B)
 3. [Гдб](https://github.com/lll-phill-lll/hse_caos_practice/tree/master/2022_216/02sem-asm#gdb)
 4. [Битовые сдвиги](https://github.com/lll-phill-lll/hse_caos_practice/tree/master/2022_216/02sem-asm#%D1%81%D0%B4%D0%B2%D0%B8%D0%B3%D0%B8)
+5. [Оптимизация умножения с помощью инструкции lea](https://github.com/lll-phill-lll/hse_caos_practice/blob/master/2022_216/03sem-asm/README.md#lea-%D0%B2-%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8)
 
 ## Обратная связь
 
