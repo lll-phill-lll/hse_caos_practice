@@ -7,6 +7,7 @@
 * [Сравнение float чисел](equal_check.c)
 * [Составление +-inf и NaN руками](nan_example.c)
 * [num != (int)(float)num](conversions.c)
+* [Про inline asm](inline_asm)
 
 # Представление вещественных чисел
 
@@ -267,7 +268,7 @@ E - экспонента (на сколько нужно умножить ман
 typedef union {
     float f;
     struct {
-        // implementation defined поведение заключается в порядке бит. 
+        // implementation defined поведение заключается в порядке бит.
         // нет строгих гарантий, что сначала будут идти 23, потом 8, а потом 1.
         unsigned int mantissa : 23;
         unsigned int exponent : 8;
