@@ -14,6 +14,9 @@ One.
 
 ## Functionality
 
+
+### Markdown
+
  - Normalize paragraphs of text.
 
  - Style text emphasis and links.
@@ -25,7 +28,17 @@ One.
 
  - Style code blocks with syntax highlighting.
 
-And do all of the above using a configuration file, which allows to
+
+### Config
+
+The program should have a configuration file, which would allow to
 specify colors, text width, number of spaces between sentences, use of
 non-standard symbols (e. g. tick emojis in task lists), header styles,
 and more.
+
+
+### VI
+
+Navigation inside the viewer should support vi-like movement.
+Potentially, a vi-like console can be added to change the main config
+options on the fly.
