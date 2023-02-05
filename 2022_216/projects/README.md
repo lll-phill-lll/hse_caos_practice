@@ -101,7 +101,7 @@
 - [Good first issue](raw_projects.md) [свободен]
 - [Уведомления в командной строке](https://github.com/lll-phill-lll/hse_caos_practice/tree/master/2022_216/projects#%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B9-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B5) [свободен]
 - [Chess](project_chess.md) [занят]
-- [Realtime chat](project_realtime_chat.md) [занят]
+- [Realtime chat](project_real_time_chat.md) [занят]
 - [Ascii video call](project_ascii_video_call.md) [занят]
 - [Markdown viewer cli](project_markdown_viewer_cli.md) [занят]
 - [Мессенджер на сокетах](project_messenger_over_sockets.md) [занят]
