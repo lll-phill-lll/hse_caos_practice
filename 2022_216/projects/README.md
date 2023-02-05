@@ -74,7 +74,7 @@
 **Задача**
 
 Многие разработчики много времени проводят в терминале и теряют концентрацию, когда отвлекаются на другие приложения. Или вообще игнорируют их.
-При этом у них могут быть дела: поставить стираться посудомойку, вынуть доширак из микроволновки, ответить на почту. Для таких людей было бы удобно уметь 
+При этом у них могут быть дела: поставить стираться посудомойку, вынуть доширак из микроволновки, ответить на почту. Для таких людей было бы удобно уметь
 Создавать простые уведомления сразу из командной строки и получать их ненавязчиво.
 
 **Сколько человек**
@@ -95,3 +95,13 @@
 - [Optimize matrix](project_optimize_matrix.md) [свободен]
 - [Reincarnate work](project_reincarnate_work.md) [свободен]
 - [Time measure](project_time_measure.md) [свободен]
+- [Github messenger](raw_projects.md) [свободен]
+- [Rescue files](raw_projects.md) [свободен]
+- [Png encoding](raw_projects.md) [свободен]
+- [Good first issue](raw_projects.md) [свободен]
+- [Chess](project_chess.md) [занят]
+- [Realtime chat](project_realtime_chat.md) [занят]
+- [Ascii video call](project_ascii_video_call.md) [занят]
+- [Markdown viewer cli](project_markdown_viewer_cli.md) [занят]
+- [Мессенджер на сокетах](project_messenger_over_sockets.md) [занят]
+- [Следим за спиной](project_watch_your_posture.md) [занят]
