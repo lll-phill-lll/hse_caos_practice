@@ -98,7 +98,6 @@
 - [Rescue files](raw_projects.md) [свободен]
 - [Png encoding](raw_projects.md) [свободен]
 - [Good first issue](raw_projects.md) [свободен]
-- [Анализ окружающей среды. Ардуино.](project_arduino_environmental_data_analysis.md) [свободен]
 - [Система контроля версий](project_vcs.md) [свободен]
 - [Уведомления в командной строке](project_command_line_notifications.md) [занят]
 - [Chess](project_chess.md) [занят]
@@ -111,3 +110,5 @@
 - [ASCII-converter](project_ascii_converter.md) [занят]
 - [Помодоро в консоли](project_console_pomodoro.md) [занят]
 - [Time measure](project_time_measure.md) [занят]
+- [Анализ окружающей среды. Ардуино.](project_arduino_environmental_data_analysis.md) [занят]
+- [Разложение матриц](project_matrix_decomposition.md) [занят]
