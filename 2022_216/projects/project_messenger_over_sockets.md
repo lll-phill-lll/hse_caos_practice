@@ -8,7 +8,7 @@
 
 Предложен студентами: да
 
-Ссылка на репозиторий:
+Ссылка на репозиторий: https://github.com/komilakurbanova/SocketMessenger
 
 ---
 
