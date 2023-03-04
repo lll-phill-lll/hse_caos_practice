@@ -8,7 +8,7 @@
 
 Предложен студентами: Игорь Рябков
 
-Ссылка на репозиторий:
+Ссылка на репозиторий: https://github.com/APieceOfHappiness/ProjectArduino
 
 ---
 
