@@ -121,3 +121,4 @@
 - [Анализ окружающей среды. Ардуино.](project_arduino_environmental_data_analysis.md) [занят]
 - [Разложение матриц](project_matrix_decomposition.md) [занят]
 - [Блокчейн голосование](project_blockchain_voting_system.md) [занят]
+- [Сжатие и отправка файлов](project_file_sender_receiver.md)[занят]
