@@ -122,3 +122,4 @@
 - [Разложение матриц](project_matrix_decomposition.md) [занят]
 - [Блокчейн голосование](project_blockchain_voting_system.md) [занят]
 - [Сжатие и отправка файлов](project_file_sender_receiver.md)[занят]
+- [Грамотный ценник](project_literate_tag.md)[занят]
