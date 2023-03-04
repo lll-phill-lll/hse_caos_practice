@@ -15,7 +15,7 @@
 
 ## Оценка
 
-Оценка за каждый модуль - max(баллы, 10)
+Оценка за каждый модуль - min(баллы, 10)
 
 ### Модуль 3
 
@@ -120,3 +120,4 @@
 - [Time measure](project_time_measure.md) [занят]
 - [Анализ окружающей среды. Ардуино.](project_arduino_environmental_data_analysis.md) [занят]
 - [Разложение матриц](project_matrix_decomposition.md) [занят]
+- [Блокчейн голосование](project_blockchain_voting_system.md) [занят]
