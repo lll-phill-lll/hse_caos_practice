@@ -3,6 +3,7 @@
 #include <future>
 
 int func(int i) {
+    // Исключения в async кидаются тоже приятнее
     throw std::logic_error("hello");
     return 123 + i;
 }
@@ -12,12 +13,11 @@ int main() {
 
     int res;
     try {
+        // аналогично тому, как мы делали в thread
         res = f.get();
     } catch (std::exception& ex) {
         std::cout << ex.what() << std::endl;
     }
-
-
 
     std::cout << res << std::endl;
 }

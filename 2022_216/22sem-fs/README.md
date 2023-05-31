@@ -1,12 +1,14 @@
 # [22 Семинар 30.05.2023 Нити С++](https://disk.yandex.ru/d/hVWLMgTBxXHBUQ/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0%20%D0%B8%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B/%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80/%D0%91%D0%9F%D0%9C%D0%98216%20%D0%A4%D0%B8%D0%BB%D0%B8%D1%82%D0%BE%D0%B2%202023-05-30T11-31-01Z.mp4)
 ## Файлики с кодом:
-* [Простой пример thread](simple_thread.cpp)
-* [Пример передачи в поток несколько аргументов](simple_thread_multiple_args.cpp)
-* [Пример передачи в поток функцию класса](thread_callables.cpp)
-* [Пример работы mutex](mutex.cpp)
-* [Пример работы futures](futures.cpp)
+* [Thread](simple_thread.cpp)
+* [Передача в >поток аргументов по ссылке](thread_pass_arguments_by_ref.cpp)
+* [Передача в поток callable](thread_callables.cpp)
+* [mutex, lock_guard](mutex.cpp)
+* [Future/promise](futures.cpp)
 * [Обработка исключений](exceptions.cpp)
-* [Пример вызова несколько потоков](vector_threads.cpp)
+* [Async](async.cpp)
+* [Обработка исключений в async](async_exceptions.cpp)
+* [Несколько потоков, несколько пар promise-future](vector_threads.cpp)
 
 ## Класс `std::thread`
 * Класс `std::thread` объявлен в заголовочном файле `<thread>`.
@@ -33,6 +35,13 @@ bool .try_lock() // блокирует mutex, если это возможно
 * [std::future](https://en.cppreference.com/w/cpp/thread/future) объявлен в заголовочном файле `<future>`.
 * `promise` и `future` нужны, чтобы получить возвращаемые значения функций. Они работают по аналогии с каналом. В `promise` пишем значения с помощью `.set_value(val)`, из `future` забираем с помощью `.get()`.
 * Записать или получить значение можно только ОДИН раз. Повторный вызов приведет к выброса исключения.
+* `future` и `promise` нельзя копировать.
+
+## Класс `std::ref`, `std::cref`
+
+* [std::ref/std::cref](https://en.cppreference.com/w/cpp/utility/functional/ref)
+* нужны, чтобы не терять ссылку, когда передаем объект в поток
+* создается объект [std::reference_wrapper](https://en.cppreference.com/w/cpp/utility/functional/reference_wrapper), который можно недорого копировать и который умеет конвертироваться в ссылку. Таким образом можно по ссылке передавать аргументы в потоки.
 
 ## References
 * [Прошлый год](https://github.com/blackav/hse-caos-2020/tree/master/23-stdthread)

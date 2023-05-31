@@ -1,6 +1,10 @@
 #include <iostream>
 #include <thread>
 
+// объявляет оператор (), теперь можно сделать так:
+// A a;
+// a();
+// и вызовется код оператора
 struct A {
     void operator()() {
         std::cout << "A is called" << std::endl;
@@ -23,43 +27,59 @@ struct B {
 
 
 int main() {
+    // можем передать в поток также callable. например, объект класса, у которого определен оператор ()
     A a;
-    // std::thread t_a(a);
-    std::thread t_a(a, 5);
-
+    // можем вызвать оператор без аргументов
+    std::thread t_a(a);
+    // cout: A is called
     t_a.join();
 
+    // можем вызвать с аргументами
+    std::thread t_a_param(a, 5);
+    // cout: A is called with param: 5
+    t_a_param.join();
+
+
+    // можно в качестве функции передать статический метод класса
     {
         std::thread t_b(B::call_stat);
         t_b.join();
     }
 
+    // но нельзя передать нестатический
     // {
     //     B b;
     //     std::thread t_b(B::call);
     //     t_b.join();
     // }
 
+    // Но если следующим аргументом передать указатель на объект класса, то нестатический метод
+    // все-таки вызвать можно.
     {
         B b;
         std::thread t_b(&B::call, &b);
         t_b.join();
     }
 
-
-
-    int val = 5;
+    // Также в поток можно передать лямбду
+    //
+    // greetings захватим
+    std::string greetings("Hello");
+    // name передадим в качестве аргумента
+    std::string name("Misha");
     std::thread t_l(
-       [val](int i) {
-           std::cout << "Lambda called with val=" << val << "arg=" << i << std::endl;
+            // захватываем greetings по ссылке
+            [&greetings](std::string& name) {
+                std::cout << "Lambda called captured: " << greetings
+                << ", and passed by argument: " << name << std::endl;
+                greetings += ", ";
+                greetings += name;
        },
-       100
+       // передаем name по ссылке как аргумент, оборачивая в reference_wrapper, чтобы ссылку не
+       // потерять
+       std::ref(name)
     );
     t_l.join();
-
-
-    // std::thread t_init(a);
-    // std::thread t_new(t_init);
-
-    // t_init.join();
+    std::cout << greetings << std::endl;
+    // cout: Hello, Misha
 }
