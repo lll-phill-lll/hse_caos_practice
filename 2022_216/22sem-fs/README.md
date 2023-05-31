@@ -1,7 +1,7 @@
 # [22 Семинар 30.05.2023 Нити С++](https://disk.yandex.ru/d/hVWLMgTBxXHBUQ/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0%20%D0%B8%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B/%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80/%D0%91%D0%9F%D0%9C%D0%98216%20%D0%A4%D0%B8%D0%BB%D0%B8%D1%82%D0%BE%D0%B2%202023-05-30T11-31-01Z.mp4)
 ## Файлики с кодом:
 * [Thread](simple_thread.cpp)
-* [Передача в >поток аргументов по ссылке](thread_pass_arguments_by_ref.cpp)
+* [Передача в поток аргументов по ссылке](thread_pass_arguments_by_ref.cpp)
 * [Передача в поток callable](thread_callables.cpp)
 * [mutex, lock_guard](mutex.cpp)
 * [Future/promise](futures.cpp)
