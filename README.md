@@ -1,12 +1,14 @@
-# Странички прошлогодних семинаров по курсу CAOS (Computer Architecture and Operating Systems) HSE
+# Странички семинаров по курсу CAOS (Computer Architecture and Operating Systems) HSE
+
+# Темы текущего года
+
+1. Терминал, vim, tmux -  [конспект](01-intro), [видео](https://youtu.be/WGxA9WTWyNQ?si=19kf_FQjDpgLqb_1)
+
+## Прошлые года
 
 [2021 год. 207 группа](2021_207)
 
 [2022 год. 216 группа](2022_216)
-
-# Темы
-
-1. Терминал, vim, tmux -  [конспект](01-intro), [видео](https://youtu.be/WGxA9WTWyNQ?si=19kf_FQjDpgLqb_1)
 
 ## Правила игры
 
