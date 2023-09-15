@@ -3,7 +3,7 @@
 # Темы текущего года
 
 1. Терминал, vim, tmux -  [конспект](01-intro), [youtube](https://youtu.be/WGxA9WTWyNQ?si=19kf_FQjDpgLqb_1), [vk](https://vk.com/video-221776054_456239019)
-2. Язык ассемблера. Представление целых чисел. Сдвиги. GDB. -  [конспект](02-asm), [youtube](https://youtu.be/U6r8ubs-SAw)
+2. Язык ассемблера. Представление целых чисел. Сдвиги. GDB. -  [конспект](02-asm), [youtube](https://youtu.be/U6r8ubs-SAw), [vk](https://vk.com/video-221776054_456239020)
 
 ## Прошлые года
 
