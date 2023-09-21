@@ -5,6 +5,10 @@
 1. [[конспект](01-intro)][[youtube](https://youtu.be/WGxA9WTWyNQ?si=19kf_FQjDpgLqb_1)][[vk](https://vk.com/video-221776054_456239019)] - Терминал. vim. tmux. 
 2. [[конспект](02-asm)][[youtube](https://youtu.be/U6r8ubs-SAw)][[vk](https://vk.com/video-221776054_456239020)] - Язык ассемблера. Представление целых чисел. Сдвиги. GDB.
 
+# Консультации
+
+1. [youtube](https://youtu.be/Ad-wV1it4Ls?si=ayp3mM1UauGXmy98) - секции кода, представление чисел, гдб
+
 ## Прошлые года
 
 [2021 год. 207 группа](2021_207)
