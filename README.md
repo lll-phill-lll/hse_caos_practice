@@ -4,7 +4,7 @@
 
 1. [[конспект](01-intro)][[youtube](https://youtu.be/WGxA9WTWyNQ?si=19kf_FQjDpgLqb_1)][[vk](https://vk.com/video-221776054_456239019)] - Терминал. vim. tmux. 
 2. [[конспект](02-asm)][[youtube](https://youtu.be/U6r8ubs-SAw)][[vk](https://vk.com/video-221776054_456239020)] - Язык ассемблера. Представление целых чисел. Сдвиги. GDB.
-3. [[конспект](03-stack)][youtube][vk] - Переменные и массивы. Стек. Cdecl. Запуск asm+c и asm+c++ кода.
+3. [[конспект](03-stack)][[youtube](https://www.youtube.com/watch?v=TwgwQ6H4wz0)][vk] - Переменные и массивы. Стек. Cdecl. Запуск asm+c и asm+c++ кода.
 
 # Консультации
 
