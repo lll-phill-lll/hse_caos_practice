@@ -1,3 +1,4 @@
+// Вычислить квадрат гипотенузы для каждого треугольника из массива
 
 .global compute_hypots
 
@@ -6,9 +7,12 @@ compute_hypots:
     push    %ebp
     mov     %esp, %ebp
 
+    // сохраним ebx по cdecl
     push    %ebx
 
+    // Адрес массива
     mov     8(%ebp), %edx
+    // Счетчик числа элементов массива
     mov     12(%ebp), %ecx
 
 compute:
