@@ -1,7 +1,7 @@
 ## Файлики с кодом:
 - [Простое использование lea](lea.S)
 - [Использование lea для арифметики](lea_operations.S)
-- [Файлик с умножением на 3 (при оптимизации компилятор использует lea)](multiply_by_three.c)
+- [Файлик с умножением на 3](multiply_by_three.c). Оптимизации - [O0](multiply_by_three_O0.s), [O3](multiply_by_three_O3.s)
 - [Стековый калькулятор (switch)](stack_calc.S)
 - [Инструкция lea](lea.S)
 - Сумма цифр в строке: [asm](count_digits.S), [c](count_digits.c)
