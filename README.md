@@ -6,6 +6,7 @@
 2. [[конспект](02-asm)][[youtube](https://youtu.be/U6r8ubs-SAw)][[vk](https://vk.com/video-221776054_456239020)] - Язык ассемблера. Представление целых чисел. Сдвиги. GDB.
 3. [[конспект](03-stack)][[youtube](https://www.youtube.com/watch?v=TwgwQ6H4wz0)][[vk](https://vk.com/video-221776054_456239021)] - Переменные и массивы. Стек. Cdecl. Запуск asm+c и asm+c++ кода.
 4. [[конспект](04-more-asm)][[youtube](https://www.youtube.com/watch?v=vtA6kedKMD8)][[vk](https://vk.com/video-221776054_456239022)] - Lea, строки, части регистров, switch.
+5. [[конспект](05-asm-func)][[youtube](https://youtu.be/N-jkF3YofR8?si=E1ev_esI6ntMv8eA)][[vk](https://vk.com/video-221776054_456239023)] - Указатели на функции. Variadic functions.
 
 # Консультации
 
