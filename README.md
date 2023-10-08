@@ -1,5 +1,13 @@
 # Странички семинаров по курсу CAOS (Computer Architecture and Operating Systems) HSE
 
+# Проекты
+
+В качестве семинарской оценки у нас будет оценка за проект.
+
+Страничка с проектами: [проекты](projects)
+
+Прошлогодние проекты: [проекты](2022_216/projects)
+
 # Темы текущего года
 
 1. [[конспект](01-intro)][[youtube](https://youtu.be/WGxA9WTWyNQ?si=19kf_FQjDpgLqb_1)][[vk](https://vk.com/video-221776054_456239019)] - Терминал. vim. tmux. 
