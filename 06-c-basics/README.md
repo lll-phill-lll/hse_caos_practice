@@ -93,7 +93,7 @@ scanf будет считывать пока не закончится ввод.
 
 Поэтому если мы подберем хитро input, например: `aaaaaaaa\0aaaaaaaa\0`, то мы не зная настоящего пароля добьемся вывода `Access granted`.
 
-Проверить: `echo -e 'aaaaaaaa\0aaaaaaaa\0' | ./a.out
+Проверить: `echo -e 'aaaaaaaa\0aaaaaaaa\0' | ./a.out`
 
 В input поместится `aaaaaaaa\0` - валидная null-terminated строка, дальше input переполнится и password перезатрется, туда поместится следующая часть ввода `aaaaaaaa\0` - та же строка, что и в input.
 
