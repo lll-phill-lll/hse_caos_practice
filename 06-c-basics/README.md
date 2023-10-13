@@ -5,6 +5,7 @@
 - Делаем реалистичный progress bar: [progress.c](progress.c)
 - Сравниваем скорость буферизованного и небуферизованного вывода: [buf_speed.c](buf_speed.c)
 - Реальные примеры неожиданного поведения програм при UB: [overflow.cpp](overflow.cpp), [null_dereferencing.cpp](null_dereferencing.cpp)
+- Разворачиваем слова в строке (используем арифметику указателей): [reverse_words.c](reverse_words.c)
 
 # Printf/Scanf
 
