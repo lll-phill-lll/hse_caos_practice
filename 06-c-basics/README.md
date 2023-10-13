@@ -46,7 +46,7 @@ scanf:   `man 3 scanf`
   %0.2f - вывести float число с 2 знаками после запятой
 ```
 
-# Buffer
+## Buffer
 
 printf - line-buffered. Это означает, что он не выводит сразу же, когда мы его вызвали, а копит все в буфере и старается выводить как можно реже, но большим объемом.
 
@@ -58,3 +58,44 @@ printf - line-buffered. Это означает, что он не выводит
 2. Сделали `fflush` - сказали явно сбросить буфер
 3. Буфер переполнился
 4. Программа завершилась
+
+# Переполнение буфера scanf
+
+[test_overflow.c](test_overflow.c)
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char input[9];
+    char password[9] = "password";
+
+    // Чтобы избежать ошибки, нужно всегда указывать в scanf размер ввода:
+    // scanf("%8s", input);
+    scanf("%s", input);
+
+    if (strcmp(input, password) == 0) {
+        printf("Access granted\n");
+    } else {
+        printf("Access denied\n");
+    }
+
+}
+```
+
+scanf будет считывать пока не закончится ввод.
+
+Если явно ему не сказать считать 8 символов: `scanf("%8s")`, то он будет считывать даже когда input переполнится.
+
+Так как input и password лежат на стеке поряд, то когда input переполнится scanf начнет записывать уже в password.
+
+Поэтому если мы подберем хитро input, например: `aaaaaaaa\0aaaaaaaa\0`, то мы не зная настоящего пароля добьемся вывода `Access granted`.
+
+Проверить: `echo -e 'aaaaaaaa\0aaaaaaaa\0' | ./a.out
+
+В input поместится `aaaaaaaa\0` - валидная null-terminated строка, дальше input переполнится и password перезатрется, туда поместится следующая часть ввода `aaaaaaaa\0` - та же строка, что и в input.
+
+Дальше strcmp побайтово сравнит строки и вернет 0 (признак равенства строк)
+
