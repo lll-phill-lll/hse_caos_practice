@@ -146,7 +146,7 @@ https://kristerw.blogspot.com/2017/09/follow-up-on-why-undefined-behavior-may.ht
 
 [null_dereferencing.cpp](null_dereferencing.cpp)
 
-```
+```c
   #include <iostream>
   
   typedef int (*func_t)();
