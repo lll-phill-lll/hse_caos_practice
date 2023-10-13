@@ -19,10 +19,13 @@ int main() {
 
     unsigned iters = 10000000;
 
-    print(iters); // с буффером намного быстрее
+    // 4 секунды
+    print(iters);
 
+    // Устанавливаем пустой буфер, тем самым отключая буферизацию
     setbuf(stdout, NULL);
 
-    print(iters); // а так сильно медленнее
+    // 16 секунд
+    print(iters);
 
 }
