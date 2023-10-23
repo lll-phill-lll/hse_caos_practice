@@ -16,6 +16,7 @@
 4. [[конспект](04-more-asm)][[youtube](https://www.youtube.com/watch?v=vtA6kedKMD8)][[vk](https://vk.com/video-221776054_456239022)] - Lea, строки, части регистров, switch.
 5. [[конспект](05-asm-func)][[youtube](https://youtu.be/N-jkF3YofR8?si=E1ev_esI6ntMv8eA)][[vk](https://vk.com/video-221776054_456239023)] - Указатели на функции. Variadic functions.
 6. [[конспект](06-c-basics)][[youtube](https://youtu.be/6YEfGrcKMK8?si=4f4AzAKbPrftyIRw)][[vk](https://vk.com/video-221776054_456239024)] - Си. Printf/scanf, неожиданные последствия UB, буферизация, атака переполнением буфера, работа со строками используя арифметику указателей.
+7. [[конспект](07-c-dynamic-mem)] - Си. Работа с динамической памятью. malloc/calloc/realloc. Brk/Sbrk. OOM-killer.
 
 # Консультации
 
