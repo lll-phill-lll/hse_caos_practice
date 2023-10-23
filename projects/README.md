@@ -111,4 +111,5 @@ TBD
 - [Good first issue](raw_projects.md) [свободен]
 - [Система контроля версий](project_vcs.md) [свободен]
 - [Следим за спиной](project_watch_your_posture.md) [свободен]
+- [CHIP-8 эмулятор](project_chip_8.md) [занят]
 
