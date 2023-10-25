@@ -112,6 +112,7 @@ TBD
 - [Следим за спиной](project_watch_your_posture.md) [свободен]
 - [2d игра в терминале](project_2d_terminal_game.md) [свободен]
 - [Телеграм бот с рецептами](project_recipes_bot.md) [свободен]
+- [Приложение для gtd](project_gtd.md) [свободен]
 - [Png encoding](project_png_encoding.md) [занят]
 - [CHIP-8 эмулятор](project_chip_8.md) [занят]
 - [Морской бой](project_battleship.md) [занят]
