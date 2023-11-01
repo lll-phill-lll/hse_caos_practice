@@ -110,7 +110,7 @@ TBD
 - [Good first issue](raw_projects.md) [свободен]
 - [Система контроля версий](project_vcs.md) [свободен]
 - [Следим за спиной](project_watch_your_posture.md) [свободен]
-- [2d игра в терминале](project_2d_terminal_game.md) [свободен]
+- [2d игра в терминале](project_2d_terminal_game.md) [занят]
 - [Телеграм бот с рецептами](project_recipes_bot.md) [свободен]
 - [Приложение для gtd](project_gtd.md) [свободен]
 - [Сапер](project_minesweeper.md) [занят]
