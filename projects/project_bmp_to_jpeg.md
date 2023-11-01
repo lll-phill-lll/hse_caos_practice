@@ -8,6 +8,7 @@
 Предложен студентами: да
 
 Ссылка на репозиторий:
+https://github.com/yalibina/bmp_to_jpeg/tree/main
 
 ---
 
