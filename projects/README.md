@@ -111,7 +111,7 @@ TBD
 - [Система контроля версий](project_vcs.md) [свободен]
 - [Следим за спиной](project_watch_your_posture.md) [свободен]
 - [2d игра в терминале](project_2d_terminal_game.md) [занят]
-- [Телеграм бот с рецептами](project_recipes_bot.md) [свободен]
+- [Телеграм бот с рецептами](project_recipes_bot.md) [занят]
 - [Приложение для gtd](project_gtd.md) [свободен]
 - [Сапер](project_minesweeper.md) [занят]
 - [Дедлайны](project_deadlines.md) [занят]
