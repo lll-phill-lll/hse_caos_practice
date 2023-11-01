@@ -8,7 +8,7 @@
 
 Предложен студентами: нет
 
-Ссылка на репозиторий:
+Ссылка на репозиторий: https://github.com/sofia-nelipovich/png_encoding
 
 ---
 
