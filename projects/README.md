@@ -125,4 +125,5 @@ TBD
 - [SSU](project_ssu.md) [занят]
 - [Телеграм бот для путешествий](project_travel_bot.md) [занят]
 - [BMP to JPEG](project_bmp_to_jpeg.md) [занят]
+- [Debugger](project_debugger.md) [занят]
 
