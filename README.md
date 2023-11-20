@@ -18,6 +18,7 @@
 6. [[конспект](06-c-basics)][[youtube](https://youtu.be/6YEfGrcKMK8?si=4f4AzAKbPrftyIRw)][[vk](https://vk.com/video-221776054_456239024)] - Си. Printf/scanf, неожиданные последствия UB, буферизация, атака переполнением буфера, работа со строками используя арифметику указателей.
 7. [[конспект](07-c-dynamic-mem)][[youtube](https://youtu.be/8n6i81ZGi6U)][[vk](https://vk.com/video-221776054_456239025)] - Си. Работа с динамической памятью. malloc/calloc/realloc. Brk/Sbrk. OOM-killer.
 8. [[конспект](08-utf-8)][[youtube](https://youtu.be/ieerMEthNhE)][[vk](https://vk.com/video-221776054_456239026)] - Кодировки. Unicode, UTF-8, KOI8-R. Как работают emoji.
+9. [[конспект](09-float)][[youtube](https://youtu.be/G3_ZJeLUoRU)][[vk](https://vk.com/video-221776054_456239027)] - IEEE754, float/double, разбираемся в битах, смотрим на 0.1+0.2 != 0.3
 
 # Консультации
 
