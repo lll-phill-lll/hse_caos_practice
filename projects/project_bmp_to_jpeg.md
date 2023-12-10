@@ -29,3 +29,17 @@ https://github.com/yalibina/bmp_to_jpeg/tree/main
 
 ##### Стек технологий
 1. С++
+
+--
+
+##### КТ-2
+* Сделано: 
+1. Реализовали чтение изображения из BMP, методы для работы с ним
+2. Перевод из RGB в YCbCr
+3. Базовые операции с пикселями RGB
+* Предстоит:
+1. Реализовать алгоритм кодирования
+2. Реализовать запись JPEG файла
+3. Работа из консоли
+* Материалы:
+https://habr.com/ru/articles/102521/, https://en.wikipedia.org/wiki/JPEG#JPEG_compression, https://github.com/ImpulseAdventure/JPEGsnoop
