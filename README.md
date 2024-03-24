@@ -20,6 +20,15 @@
 8. [[конспект](08-utf-8)][[youtube](https://youtu.be/ieerMEthNhE)][[vk](https://vk.com/video-221776054_456239026)] - Кодировки. Unicode, UTF-8, KOI8-R. Как работают emoji.
 9. [[конспект](09-float)][[youtube](https://youtu.be/G3_ZJeLUoRU)][[vk](https://vk.com/video-221776054_456239027)] - IEEE754, float/double, разбираемся в битах, смотрим на 0.1+0.2 != 0.3
 10. [[конспект](10-gdb)][[youtube](https://youtu.be/jf0zcz2fjFc)][[vk](https://vk.com/video-221776054_456239028)] - GDB. Break, watch. Встроенный питон. Обратный дебаг. Pretty printers.
+11. [[конспект](11-sse)][[youtube](https://youtu.be/lpDQ9suZirY)][[vk](https://vk.com/video-221776054_456239028)] - FPU, SIMD, пишем векторизацию на языке ассемблера
+12. [[конспект](12-syscall)][[youtube](https://youtu.be/1_J2gFa8Ur8)][[vk](https://vk.com/video-221776054_456239028)] - Системные вызовы. Read/Write, прерывания. 0x80
+13. [[конспект](13-git)][[youtube](https://youtu.be/O28CHd9_LME)][[vk](https://vk.com/video-221776054_456239028)] - Git. Ветки, коммиты. Делаем PR. Rebase.
+14. [[конспект](14-yabloko-io)][[youtube](https://youtu.be/4XRTW3Eug9Q)][[vk](https://vk.com/video-221776054_456239028)] - ОС YABLOKO. Port-mapped I/O, Memory-mapped I/O, делаем простую анимацию и игру.
+15. [[конспект](15-yabloko-pit)][[youtube](https://youtu.be/Wafpzzgtq_U)][[vk](https://vk.com/video-221776054_456239028)] - ОС YABLOKO. Пишем свой sleep, используя Programmable Interval Timer
+16. [[конспект](16-fork)][[youtube](https://youtu.be/dZfT3kA9_L0)][[vk](https://vk.com/video-221776054_456239028)] - Fork. Создаем процессы, дожимдаемся их выполнения. Форк-бомба.
+17. [[конспект](17-exec)][[youtube](https://youtu.be/WWS6j-TKr0w)][[vk](https://vk.com/video-221776054_456239028)] - Exec. Разбираемся, как баш запускает процессы, exec+lp/le/ve/vp/vpe. dup/dup2.
+18. [[конспект](18-mmap)][[youtube](https://youtu.be/WrSy-3RTblg)][[vk](https://vk.com/video-221776054_456239028)] - Mmap. Маппинг файла, анонимный маппинг, общая память в процессах. Как работает malloc.
+
 
 # Консультации
 
