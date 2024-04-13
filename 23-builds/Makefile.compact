@@ -1,0 +1,8 @@
+converter: main.o ppm.o grayscale.o
+	g++ main.o ppm.o grayscale.o -o converter
+
+%.o: %.cpp
+	g++ -c $^ -o $@
+
+clean:
+	rm -f *.o converter

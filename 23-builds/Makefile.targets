@@ -1,0 +1,2 @@
+converter: main.cpp ppm.cpp grayscale.cpp
+	g++ main.cpp ppm.cpp grayscale.cpp -o converter

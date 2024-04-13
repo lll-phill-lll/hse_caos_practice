@@ -1,0 +1,14 @@
+converter: main.o ppm.o grayscale.o
+	g++ main.o ppm.o grayscale.o -o converter
+
+main.o: main.cpp
+	g++ -c main.cpp -o main.o
+
+ppm.o: ppm.cpp
+	g++ -c ppm.cpp -o ppm.o
+
+grayscale.o: grayscale.cpp
+	g++ -c grayscale.cpp -o grayscale.o
+
+clean:
+	rm -f *.o converter

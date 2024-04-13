@@ -4,11 +4,10 @@
 
 #include <vector>
 
-
 void ApplyBlur(std::vector<Pixel>& image, int width, int height) {
     std::vector<Pixel> blurredImage(image.size());
 
-    int blurRadius = 5;
+    int blurRadius = 15;
 
     for (int y = blurRadius; y < height - blurRadius; ++y) {
         for (int x = blurRadius; x < width - blurRadius; ++x) {
