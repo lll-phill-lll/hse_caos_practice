@@ -1,0 +1,13 @@
+CXX=g++
+CXXFLAGS=-std=c++17
+
+converter: main.o ppm.o grayscale.o
+	$(CXX) $(CXXFLAGS) main.o ppm.o grayscale.o -o converter
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c -MD $< -o $@
+
+clean:
+	rm -f *.o *.d converter
+
+-include *.d
