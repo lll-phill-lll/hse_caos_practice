@@ -3,9 +3,9 @@ package summator
 // Функция для подсчета суммы элементов в массиве
 func Sum(numbers []int) int {
 	sum := 0
-	for _, num := range numbers {
-		sum += num
-	}
+
+    for i := 1; i < len(numbers); i++ {
+        sum += numbers[i]
+    }
 	return sum
 }
-
