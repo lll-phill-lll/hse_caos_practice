@@ -8,24 +8,27 @@ import (
 	"project/averegator"
 )
 
+// Функция для преобразования аргументов командной строки в целочисленный формат
+func convertArgsToInt(args []string) ([]int, error) {
+    var numbers []int
+    for _, arg := range args {
+        num, err := strconv.Atoi(arg)
+        if err != nil {
+            return nil, err
+        }
+        numbers = append(numbers, num)
+    }
+    return numbers, nil
+}
+
 func main() {
 	// Получаем аргументы командной строки
 	args := os.Args[1:]
 
-	// Если не указаны аргументы, выводим сообщение и завершаем программу
-	if len(args) == 0 {
-		fmt.Println("Использование: ./main число1 число2 число3 ...")
-		return
-	}
-
 	// Преобразуем аргументы в целочисленный формат
-	var numbers []int
-	for _, arg := range args {
-		num, err := strconv.Atoi(arg)
-		if err != nil {
-			log.Fatalf("Ошибка при преобразовании аргумента в число: %v", err)
-		}
-		numbers = append(numbers, num)
+	numbers, err := convertArgsToInt(args)
+	if err != nil {
+		log.Fatalf("Ошибка при преобразовании аргументов в числа: %v", err)
 	}
 
 	// Выводим числа и среднее значение
