@@ -16,9 +16,15 @@ test: test_averegator
 
 coverage: test_averegator
 	./test_averegator
-	gcov test_averegator.c averegator.c
+	gcov averegator.c
+
+lcov: coverage
+	mkdir lcov-report
+	lcov --capture --directory . --output-file lcov-report/coverage.info
+	genhtml lcov-report/coverage.info --output-directory lcov-report
 
 clean:
 	rm -f *.o *.d *.gcov *.gcno *.gcda main test_averegator a.out
+	rm -rf lcov-report
 
 -include *.d
