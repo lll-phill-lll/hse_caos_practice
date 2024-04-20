@@ -8,7 +8,7 @@ import (
 	"project/averegator"
 )
 
-// Функция для преобразования аргументов командной строки в целочисленный формат
+// Функция для преобразования аргументов командной строки 
 func convertArgsToInt(args []string) ([]int, error) {
     var numbers []int
     for _, arg := range args {
