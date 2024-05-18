@@ -17,8 +17,8 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    int fd1 = open(argv[1], O_RDONLY);
-    int fd2 = open(argv[2], O_RDONLY);
+    int fd1 = open(argv[1], O_RDONLY | O_NONBLOCK);
+    int fd2 = open(argv[2], O_RDONLY | O_NONBLOCK);
 
     char buf[BUFFER_SIZE];
 
