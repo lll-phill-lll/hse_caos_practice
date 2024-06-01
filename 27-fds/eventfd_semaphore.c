@@ -5,12 +5,13 @@
 #include <stdint.h>
 #include <sys/wait.h>
 
+
 #define CHILD_NUM 5
 
 void do_some_large_task(int my_num) {
     printf("[%d]: started task\n", my_num);
 
-    sleep(my_num);
+    sleep(my_num + 1);
 
     printf("[%d]: finished task\n", my_num);
 }

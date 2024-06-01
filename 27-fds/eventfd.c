@@ -17,7 +17,7 @@ void do_some_large_task() {
 void child_action(int efd) {
     while(1) {
         do_some_large_task();
-        uint64_t tasks_finished = 0;
+        uint64_t tasks_finished = 1;
         write(efd, &tasks_finished, sizeof(tasks_finished));
     }
 

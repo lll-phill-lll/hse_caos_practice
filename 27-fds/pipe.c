@@ -23,6 +23,7 @@ void child_action(int fds[]) {
     // notify parent that large task is done
     int done = 1;
     write(fds[1], &done, sizeof(done));
+    close(fds[1]);
 
     // do something
     _exit(0);
@@ -41,9 +42,8 @@ int main() {
     }
 
     int done;
-    for (int i = 0; i != CHILD_NUM; ++i) {
-        read(fds[0], &done, sizeof(done));
-    }
+    close(fds[1]);
+    while(read(fds[0], &done, sizeof(done)));
 
     printf("[PARENT] all children finished tasks\n");
 

@@ -36,9 +36,12 @@ int main() {
         pid_t pid = fork();
         // if we are child
         if (!pid) {
+            sigemptyset(&mask);
+            sigprocmask(SIG_SETMASK, &mask, NULL);
             child_action();
         }
     }
+    sleep(5);
 
     // what if we move sigprocmask here?
 
