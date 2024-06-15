@@ -1,7 +1,3 @@
-
-
-
-
 #include <sys/epoll.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -54,7 +50,7 @@ int setup_server(int epoll_fd) {
         exit(EXIT_FAILURE);
     }
 
-	set_nonblocking(sockfd);
+    set_nonblocking(sockfd);
 
     struct epoll_event event;
     event.events = EPOLLIN | EPOLLET;
@@ -63,7 +59,6 @@ int setup_server(int epoll_fd) {
     epoll_ctl(epoll_fd, EPOLL_CTL_ADD, sockfd, &event);
     return sockfd;
 }
-
 
 int setup_timer(int epoll_fd) {
     int tfd = timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK);
@@ -84,6 +79,13 @@ int setup_timer(int epoll_fd) {
     return tfd;
 }
 
+const char http_response_template[] =
+    "HTTP/1.1 200 OK\r\n"
+    "Content-Type: text/html\r\n"
+    "Content-Length: %d\r\n"
+    "\r\n"
+    "<html><body><h1>Echo Server</h1><p>%.*s</p></body></html>";
+
 void handle_client_events(int epoll_fd, struct epoll_event *events, int i) {
     int fd = events[i].data.fd;
 
@@ -95,17 +97,28 @@ void handle_client_events(int epoll_fd, struct epoll_event *events, int i) {
         ssize_t count;
         while ((count = read(fd, buffer, sizeof(buffer))) > 0) {
             printf("[MSG%d] %.*s\n", fd, (int)count, buffer);
-            if (write(fd, buffer, count) == -1) {
-                perror("write");
-                close(fd);
-                break;
+
+
+            char response[2048];
+            int content_length = snprintf(NULL, 0, "<html><body><h1>Echo Server</h1><p>%.*s</p></body></html>", (int)count, buffer);
+            int response_length = snprintf(response, sizeof(response), http_response_template, content_length, (int)count, buffer);
+
+            ssize_t total_written = 0;
+            while (total_written < response_length) {
+                ssize_t written = write(fd, response + total_written, response_length - total_written);
+                if (written == -1) {
+                    perror("write");
+                    close(fd);
+                    break;
+                }
+                total_written += written;
             }
         }
         if (count == -1 && errno != EAGAIN) {
             perror("read");
             close(fd);
         } else if (count == 0) {
-			--clients_connected;
+            --clients_connected;
             printf("Disconnected fd: %d\n", fd);
             close(fd);
         }
@@ -152,7 +165,7 @@ void handle_print_log(int fd) {
 int main() {
     int epoll_fd = epoll_create1(0);
 
-	int server_fd = setup_server(epoll_fd);
+    int server_fd = setup_server(epoll_fd);
 
     int timer_fd = setup_timer(epoll_fd);
 
@@ -174,4 +187,3 @@ int main() {
     close(epoll_fd);
     return 0;
 }
-
