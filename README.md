@@ -11,7 +11,9 @@
 # Темы текущего года
 
 к - к
+
 yt - ссылка на запись ютуб
+
 vk - ссылка на запись вк
 
 1. [[к](01-intro)][[yt](https://youtu.be/WGxA9WTWyNQ?si=19kf_FQjDpgLqb_1)][[vk](https://vk.com/video-221776054_456239019)] - Терминал. vim. tmux. 
