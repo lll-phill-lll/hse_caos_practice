@@ -28,7 +28,18 @@
 16. [[конспект](16-fork)][[youtube](https://youtu.be/dZfT3kA9_L0)][[vk](https://vk.com/video-221776054_456239028)] - Fork. Создаем процессы, дожимдаемся их выполнения. Форк-бомба.
 17. [[конспект](17-exec)][[youtube](https://youtu.be/WWS6j-TKr0w)][[vk](https://vk.com/video-221776054_456239028)] - Exec. Разбираемся, как баш запускает процессы, exec+lp/le/ve/vp/vpe. dup/dup2.
 18. [[конспект](18-mmap)][[youtube](https://youtu.be/WrSy-3RTblg)][[vk](https://vk.com/video-221776054_456239028)] - Mmap. Маппинг файла, анонимный маппинг, общая память в процессах. Как работает malloc.
-
+19. [[конспект](19-files)][youtube][vk] - Как работают файлы и права. inode, symlink vs hardlink. Что за странный буквы S, T в правах (drwxrwxrwt)
+20. [[конспект](20-signals)][[youtube](https://youtu.be/jja1D2VQSvs)][vk] - Сигналы. Обработчики. Sigaction. Почему не все функции можно использовать внутри обработчика.
+21. ?????
+22. [[конспект](22-pipes)][[youtube](https://youtu.be/jIFUlpiBxrs)][vk] - Каналы. Pipe(2). Dup2(2). Как напрограммировать `ls -l | wc -l`. 
+23. [[конспект](23-builds)][[youtube](https://youtu.be/EzzcsUgIf6A)][vk] - Системы сборки. Make.
+24. [[конспект](24-tests)][[youtube](https://youtu.be/8v-_5VQ_hVg)][vk] - Тестирование проектов. C/Go.
+25. [[конспект](25-sockets)][[youtube](https://youtu.be/RE90c0PMBt4)][vk] - Сеть и сокеты. Getaddrinfo, connect, socket, accept. Простой клиент и сервер.
+26. [[конспект](26-epoll)][[youtube](https://youtu.be/JoMAEyHNzs0)][vk] - Мультиплексирование. Epoll. Edge-triggered vs level-triggered. Epoll + pipe. Epoll server.
+27. [[конспект](27-fds)][youtube][vk] - Все есть файловый дескриптор. eventfd, timerfd, signalfd. Соединяем все с epoll.
+28. [[конспект](28-threads)][[youtube](https://youtu.be/pPjDPe0duXc)][vk] - Pthread. Запускаем наибольшее возможное количество потоков. Передаем и принимаем параметры.
+29. [[конспект](29-mutex)][youtube][vk] - Mutex. Atomic vs mutex. Race и Deadlock. Делаем банк.
+30. [конспект][[youtube](https://youtu.be/vVI36v-_0dc)][vk] - Арендуем сервер в облаке. Запускам свой epoll сервер. nginx + systemd.
 
 # Консультации
 
