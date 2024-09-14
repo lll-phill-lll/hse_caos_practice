@@ -1,6 +1,8 @@
-
-[Видео](https://www.youtube.com/watch?v=WGxA9WTWyNQ)
 # Вводная часть 
+
+## Файлики
+
+[Скрипт для запуска qemu (mac)](run_qemu.sh)
 
 ## Ставим линукс
 
