@@ -1,13 +1,27 @@
-# Вводная часть 
+Терминал. vim. tmux. Устанавливаем qemu с убунтой на мак. Смотрим, как сдавать дз.
 
 ## Файлики
 
 [Скрипт для запуска qemu (mac)](run_qemu.sh)
 
+[[yt](https://youtu.be/ct35VNB5j60)][[vk](https://vk.com/video-221776054_456239032)]
+
 ## Ставим линукс
 
-Virtual Box, Docker, WSL - http://wiki.cs.hse.ru/CAOS-2023/24
-Qemu - http://wiki.cs.hse.ru/CAOS-2021
+http://wiki.cs.hse.ru/CAOS-2024/25
+
+Способ с qemu (mac) - http://wiki.cs.hse.ru/CAOS-2021
+
+### Способ с семинара:
+
+Если еще не установлен brew, тогда установить по инструкции с https://brew.sh/
+
+1. В терминале: `brew install qemu`
+2. Положить распакованный образ с семинара в какую-то папку. Чтобы распоковать, ввести в терминале: `tar -xvzf xubuntu_caos_2021.qcow2.tar.gz`
+3. В ту же папку положить `run_qemu.sh`.
+4. В терминале: `chmod +x run.qemu.sh`
+5. В терминале: `./run_qemu.sh`
+
 
 
 ## Терминал
