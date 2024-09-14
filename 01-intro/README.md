@@ -4,7 +4,10 @@
 
 [Скрипт для запуска qemu (mac)](run_qemu.sh)
 
-[[yt](https://youtu.be/ct35VNB5j60)][[vk](https://vk.com/video-221776054_456239032)]
+## Запись
+
+youtube: [https://youtu.be/ct35VNB5j60](https://youtu.be/ct35VNB5j60)
+vk: [https://vk.com/video-221776054_456239032](https://vk.com/video-221776054_456239032)
 
 ## Ставим линукс
 
