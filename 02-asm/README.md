@@ -2,7 +2,7 @@
 
 ## Видео
 
-[[youtube]()][[vk]()]
+[[youtube](https://youtu.be/BXmhZjrzliI)][[vk]()]
 
 ## Файлики с кодом
 
