@@ -21,6 +21,8 @@ vk - ссылка на запись вк
 
 1. [[к](01-intro)][[yt](https://youtu.be/ct35VNB5j60)][[vk](https://vk.com/video-221776054_456239032)] - Терминал. vim. tmux. Устанавливаем qemu с убунтой на мак. Смотрим, как сдавать дз.
 2. [[к](02-asm)][[yt](https://youtu.be/BXmhZjrzliI)][[vk](https://vk.com/video-221776054_456239033)] - x64 asm. Арифметика, условные и безусловные переходы, gdb, сдвиги.
+3. [[youtube](https://youtu.be/RsyL8UWR42o)][[vk](https://vk.com/video-221776054_456239035]
+4. [к](04-cdecl)[[youtube](https://youtu.be/RsyL8UWR42o)][[vk](https://vk.com/video-221776054_456239035] - Стек, соглашение о вызовах, пролог, эпилог
 
 
 ## Прошлые года
