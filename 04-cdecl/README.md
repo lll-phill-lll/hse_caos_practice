@@ -4,7 +4,7 @@
 
 [[youtube](https://youtu.be/RsyL8UWR42o)]
 
-[[vk](https://vk.com/video-221776054_456239035]
+[[vk](https://vk.com/video-221776054_456239035)]
 
 ## Файлики с кодом
 
