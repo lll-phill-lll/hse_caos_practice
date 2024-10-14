@@ -2,7 +2,9 @@
 
 ## Видео
 
-TBA
+[[yt](https://youtu.be/Rm3lkXXVf3w)]
+
+[[vk](https://vk.com/video-221776054_456239036)]
 
 ## Файлики с кодом
 
