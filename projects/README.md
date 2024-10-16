@@ -113,8 +113,6 @@ TBD
 - [Reincarnate work](project_reincarnate_work.md) [свободен]
 - [Github messenger](raw_projects.md) [свободен]
 - [Rescue files](raw_projects.md) [свободен]
-- [Онлайн магазин](project_online_shop.md) [свободен]
-- [Медитация](project_timer_game.md) [свободен]
 - [Good first issue](raw_projects.md) [свободен]
 - [Система контроля версий](project_vcs.md) [свободен]
 - [Следим за спиной](project_watch_your_posture.md) [свободен]
