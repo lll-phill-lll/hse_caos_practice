@@ -114,7 +114,7 @@ TBD
 - [Github messenger](raw_projects.md) [свободен]
 - [Rescue files](raw_projects.md) [свободен]
 - [Good first issue](raw_projects.md) [свободен]
-- [Система контроля версий](project_vcs.md) [свободен]
+- [Система контроля версий](project_vcs.md) [занят]
 - [Следим за спиной](project_watch_your_posture.md) [свободен]
 - [Приложение для gtd](project_gtd.md) [свободен]
 - [Reverse proxy](project_reverse_proxy.md) [свободен]
