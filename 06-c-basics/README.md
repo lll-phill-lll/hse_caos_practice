@@ -6,6 +6,9 @@
 - Реальные примеры неожиданного поведения програм при UB: [overflow.cpp](overflow.cpp), [null_dereferencing.cpp](null_dereferencing.cpp)
 - Разворачиваем слова в строке (используем арифметику указателей): [reverse_words.c](reverse_words.c)
 
+## Запись:
+[[yt](https://youtu.be/Dy27sxfRakk)][[vk](https://vk.com/video-221776054_456239039)] 
+
 # Printf/Scanf
 
 Мануалы по командам:
