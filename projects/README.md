@@ -120,5 +120,8 @@ TBD
 - [Reverse proxy](project_reverse_proxy.md) [свободен]
 - [Socks proxy](project_socks_proxy) [свободен]
 - [Simple active traffic capture](project_simple_active_traffic_capture.md) [свободен]
+- [Simple database](project_simple_db.md) [свободен]
+- [Terminal messenger](project_terminal_messenger.md) [свободен]
+- [Terminal telegram cli](project_tg_in_cmd.md) [свободен]
 
 
