@@ -6,6 +6,10 @@
 * [Составление +-inf и NaN руками](nan_example.c)
 * [num != (int)(float)num](conversions.c)
 
+youtube - https://youtu.be/cRToBPl9yz0
+
+vk - https://vk.com/video-221776054_456239041
+
 # Представление вещественных чисел
 
 ## Фиксированная точка:
