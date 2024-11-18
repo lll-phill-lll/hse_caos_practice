@@ -26,6 +26,8 @@ vk - ссылка на запись вк
 5. [[к](05-calling-conventions-2)][[yt](https://youtu.be/Rm3lkXXVf3w)][[vk](https://vk.com/video-221776054_456239036)] - Соглашение о вызовах. Вызываем c/c++ код из асм кода и наоборот. Указатели на функции.
 6. [[к](06-c-basics)][[yt](https://youtu.be/Dy27sxfRakk)][[vk](https://vk.com/video-221776054_456239039)] - Язык C. Printf/scanf. Строки/массивы. Опасности UB.
 7. [[к](07-c-memory)][[yt](https://youtu.be/bLqGNXUBEFM)][[vk](https://vk.com/video-221776054_456239040)] - Динамическая память. Устройство аллокатора. malloc(0) в цикле. OOM-killer.
+8. - TBA
+9. [[к](09-floats)][[yt](https://youtu.be/cRToBPl9yz0)][[vk](https://vk.com/video-221776054_456239041)] - Числа с плавающей точкой. IEEE754. Всякие возникающие приколы.
 
 
 ## Прошлые года
