@@ -28,6 +28,7 @@ vk - ссылка на запись вк
 7. [[к](07-c-memory)][[yt](https://youtu.be/bLqGNXUBEFM)][[vk](https://vk.com/video-221776054_456239040)] - Динамическая память. Устройство аллокатора. malloc(0) в цикле. OOM-killer.
 8. - TBA
 9. [[к](09-floats)][[yt](https://youtu.be/cRToBPl9yz0)][[vk](https://vk.com/video-221776054_456239041)] - Числа с плавающей точкой. IEEE754. Всякие возникающие приколы.
+10. [[к](10-simd)][[yt](https://youtu.be/SGOaM2ruocI)][[vk]] - АКОС 10. FPU. SIMD. Векторизация. Интринсики.
 
 
 ## Прошлые года
