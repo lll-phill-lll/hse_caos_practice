@@ -1,9 +1,15 @@
-# 12 Семинар
+# 12 Семинар - работа с файлами: inode, readdir, lstat, symlink, rwxrwSrwT. Пишем свой ls -l 
 
 ## Файлики с кодом:
 
 * [Собственный ls](myls.c)
 * [Цвета для баша](colors.c)
+
+Запись:
+
+[[yt](https://youtu.be/eMnMRuf1lNc)]
+
+[[vk](https://vkvideo.ru/video-221776054_456239046)]
 
 
 # Права доступа к файлам и директориям
