@@ -30,7 +30,8 @@ vk - ссылка на запись вк
 9. [[к](09-floats)][[yt](https://youtu.be/cRToBPl9yz0)][[vk](https://vk.com/video-221776054_456239041)] - Числа с плавающей точкой. IEEE754. Всякие возникающие приколы.
 10. [[к](10-simd)][[yt](https://youtu.be/SGOaM2ruocI)][[vk](https://vkvideo.ru/video-221776054_456239042)] - АКОС 10. FPU. SIMD. Векторизация. Интринсики.
 11. [[к](11-syscalls)][[yt](https://youtu.be/R7MbnfvVHdg)][[vk](https://vkvideo.ru/video-221776054_456239045)] - Системные вызовы. read/write
-12. [[к](12-fs)][[yt](https://youtu.be/eMnMRuf1lNc)][[vk](https://vkvideo.ru/video-221776054_456239046)] - Работа с файлами: inode, readdir, lstat, symlink, rwxrwSrwT. Пишем свой ls -l 
+12. [[к](12-fs)][[yt](https://youtu.be/eMnMRuf1lNc)][[vk](https://vkvideo.ru/video-221776054_456239046)] - Работа с файлами: inode, readdir, lstat, symlink, rwxrwSrwT. Пишем свой ls -l
+13. [[к](13-git)][[yt](https://youtu.be/lJugblvqpKY)][[vk](https://vkvideo.ru/video-221776054_456239047)] - git + github
 
 
 ## Прошлые года
