@@ -32,6 +32,7 @@ vk - ссылка на запись вк
 11. [[к](11-syscalls)][[yt](https://youtu.be/R7MbnfvVHdg)][[vk](https://vkvideo.ru/video-221776054_456239045)] - Системные вызовы. read/write
 12. [[к](12-fs)][[yt](https://youtu.be/eMnMRuf1lNc)][[vk](https://vkvideo.ru/video-221776054_456239046)] - Работа с файлами: inode, readdir, lstat, symlink, rwxrwSrwT. Пишем свой ls -l
 13. [[к](13-git)][[yt](https://youtu.be/lJugblvqpKY)][[vk](https://vkvideo.ru/video-221776054_456239047)] - git + github
+14. [[к](14-yabloko)][[yt](https://youtu.be/Uu-COuOY8Oc)][[vk](https://vkvideo.ru/video-221776054_456239048)] - yabloko. Устройство ОС. Делаем игру.
 
 
 ## Прошлые года
