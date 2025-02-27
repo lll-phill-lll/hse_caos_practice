@@ -1,7 +1,1 @@
 123 456
-hello stdout: 123
-hello stdout: 123
-hello stdout: 123
-hello stdout: 123
-hello stdout: 123
-hello stdout: 123
