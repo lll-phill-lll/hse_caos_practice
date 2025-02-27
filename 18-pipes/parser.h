@@ -6,10 +6,11 @@
 #define MAX_ARGS 16
 
 typedef struct {
-    char *args[MAX_ARGS];
-    char *input;        
-    char *output;      
-    int append;       
+    char *args[MAX_ARGS];  
+    char *input;          
+    char *output;        
+    char *error;        
+    int append;        
 } Command;
 
 typedef struct {
@@ -44,6 +45,8 @@ void parse_input(const char *input, ParsedInput *parsed) {
         } else if (strcmp(tokens[i], ">") == 0 || strcmp(tokens[i], ">>") == 0) {
             cmd->append = (tokens[i][1] == '>');
             if (i + 1 < token_count) cmd->output = tokens[++i];
+        } else if (strcmp(tokens[i], "2>") == 0) {
+            if (i + 1 < token_count) cmd->error = tokens[++i];
         } else if (strcmp(tokens[i], "<") == 0) {
             if (i + 1 < token_count) cmd->input = tokens[++i];
         } else {
@@ -62,5 +65,6 @@ void print_parsed(const ParsedInput *parsed) {
         }
         if (parsed->commands[i].input) printf("  Input: %s\n", parsed->commands[i].input);
         if (parsed->commands[i].output) printf("  Output: %s (%s)\n", parsed->commands[i].output, parsed->commands[i].append ? "append" : "write");
+        if (parsed->commands[i].error) printf("  Stderr: %s\n", parsed->commands[i].error);
     }
 }
