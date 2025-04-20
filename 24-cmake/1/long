@@ -1,0 +1,11 @@
+#define aa "xxxxxxxxxxxxxxx"
+#define bb aa aa aa aa aa aa aa aa aa
+#define cc bb bb bb bb bb bb bb bb bb
+#define dd cc cc cc cc cc cc cc cc cc
+#define ee dd dd dd dd dd dd dd dd dd
+#define ff ee ee ee ee ee ee ee ee ee
+#define gg ff ff ff ff ff ff ff ff ff
+#define hh gg gg gg gg gg gg gg gg gg
+#define ii hh hh hh hh hh hh hh hh hh
+
+constexpr const char* smth = ii;
