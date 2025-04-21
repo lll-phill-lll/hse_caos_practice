@@ -34,8 +34,14 @@ vk - ссылка на запись вк
 13. [[к](13-git)][[yt](https://youtu.be/lJugblvqpKY)][[vk](https://vkvideo.ru/video-221776054_456239047)] - git + github
 14. [[к](14-yabloko)][[yt](https://youtu.be/Uu-COuOY8Oc)][[vk](https://vkvideo.ru/video-221776054_456239048)] - yabloko. Устройство ОС. Делаем игру.
 16. [[к](16-fork)][[yt](https://youtu.be/pZjlb8GF_Bg)][[vk](https://vkvideo.ru/video-221776054_456239049)] - Процессы и Fork.
+17. [[к](17-exec)][yt][[vk](https://vkvideo.ru/video-221776054_456239054)] - exec
 18. [[к](18-pipes)][[yt](https://youtu.be/5lqdXNpKEag)][[vk](https://vkvideo.ru/video-221776054_456239050)] - Pipe + dup2. Доделываем свой игрушечный баш
-
+19. [[к](19-signal)][[yt](https://youtu.be/VQsQKi8Dig0)][[vk](https://vkvideo.ru/video-221776054_456239051)] - Сигналы
+20. [[к](20-mmap)][yt][vk] - mmap
+21. [[к](21-make)][[yt](https://youtu.be/mpcQwARhfDU)][[vk](https://vkvideo.ru/video-221776054_456239053)] - система сборки make
+22. [[к](22-tests)][yt][vk] - тестирование проектов
+23. [[к](23-time)][yt][vk] - Время. time, localtime, strptime
+24. [[к](24-cmake)][[yt](https://youtu.be/fZh1D3NUVTo)][[vk](https://vkvideo.ru/video-221776054_456239055)] - cmake
 
 ## Прошлые года
 
