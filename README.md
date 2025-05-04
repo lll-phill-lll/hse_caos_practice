@@ -33,6 +33,7 @@ vk - ссылка на запись вк
 12. [[к](12-fs)][[yt](https://youtu.be/eMnMRuf1lNc)][[vk](https://vkvideo.ru/video-221776054_456239046)] - Работа с файлами: inode, readdir, lstat, symlink, rwxrwSrwT. Пишем свой ls -l
 13. [[к](13-git)][[yt](https://youtu.be/lJugblvqpKY)][[vk](https://vkvideo.ru/video-221776054_456239047)] - git + github
 14. [[к](14-yabloko)][[yt](https://youtu.be/Uu-COuOY8Oc)][[vk](https://vkvideo.ru/video-221776054_456239048)] - yabloko. Устройство ОС. Делаем игру.
+15. ???
 16. [[к](16-fork)][[yt](https://youtu.be/pZjlb8GF_Bg)][[vk](https://vkvideo.ru/video-221776054_456239049)] - Процессы и Fork.
 17. [[к](17-exec)][yt][[vk](https://vkvideo.ru/video-221776054_456239054)] - exec
 18. [[к](18-pipes)][[yt](https://youtu.be/5lqdXNpKEag)][[vk](https://vkvideo.ru/video-221776054_456239050)] - Pipe + dup2. Доделываем свой игрушечный баш
