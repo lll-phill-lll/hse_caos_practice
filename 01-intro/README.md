@@ -1,7 +1,7 @@
 # Введение. Как поставить линукс на свою машину. Простые команды.
 
 ## Запись
-[[к](01-intro)][[yt](https://youtu.be/Hk1x05fBTKw)][[vk](https://vkvideo.ru/video-221776054_456239058)]
+[[yt](https://youtu.be/Hk1x05fBTKw)][[vk](https://vkvideo.ru/video-221776054_456239058)]
 
 ## Ставим линукс
 
