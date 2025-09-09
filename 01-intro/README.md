@@ -32,6 +32,51 @@ Qemu - http://wiki.cs.hse.ru/CAOS-2021
 
 Теперь можно тут создавать файлы и они будут создаваться в папке `caos` и будут доступны из linux, с вашего компьютера и из vscode. Компиляция будет происходить на линуксе
 
+## Qemu (мак)
+
+вроде на винде тоже можно, но я не проверял( 
+
+1. Если у вас еще нет `brew`, то установите по ссылке: https://brew.sh/
+
+2. Далее в терминале: `brew install qemu`
+
+3. `brew list qemu` - смотрим, куда qemu установился. Нас интересует `x86_64`. В моем случае это `/opt/homebrew/Cellar/qemu/10.1.0/bin/qemu-system-x86_64`.
+
+4. сохраняем себе скрипт в файл `run_qemu.sh`:
+
+```
+QEMU_PATH=/opt/homebrew/Cellar/qemu/10.1.0/bin/qemu-system-x86_64
+
+FS_IMAGE_PATH=xubuntu_caos_2021.qcow2
+
+CPU_COUNT=4
+MEMORY_MB=4096
+
+${QEMU_PATH} \
+        -smp ${CPU_COUNT} \
+        -m ${MEMORY_MB} \
+        -name xubuntu_caos_2021 \
+        -hda ${FS_IMAGE_PATH} \
+        -vga virtio \
+        -display default,show-cursor=on \
+        -usb \
+        -accel tcg \
+        -chardev qemu-vdagent,id=ch1,name=vdagent,clipboard=on \
+        -device virtio-serial-pci \
+        -device virtserialport,chardev=ch1,id=ch1,name=com.redhat.spice.0
+```
+
+Вместо `QEMU_PATH` нужно поставить путь до `qemu-system-x86_64`, который мы нашли на предудыщем шаге. Файл `xubuntu_caos_2021.qcow2` нужно положить рядом со скриптом. За файлом обращайтесь ко мне.
+
+При желании можно увеличить CPU и MEMORY_MB, это количество ядер и оперативной памяти, которые вы выделяете под линукс.
+
+
+5. `chmod +x run_qemu.sh` - разрешаем скрипту выполняться
+6. `./run_qemu.sh`
+7. чтобы сделать окно больше, нужно в настройках самого линукса в display выбрать другое разрешение
+8. пароль и пользователь xubuntu
+
+
 ## Терминал
 
 	ls - вывести содержимое текущей директории 
