@@ -5,8 +5,6 @@
 
 ## Ставим линукс
 
-Virtual Box, Docker, WSL - http://wiki.cs.hse.ru/CAOS-2023/24
-Qemu - http://wiki.cs.hse.ru/CAOS-2021
 
 ### Docker + vscode
 
@@ -75,6 +73,25 @@ ${QEMU_PATH} \
 6. `./run_qemu.sh`
 7. чтобы сделать окно больше, нужно в настройках самого линукса в display выбрать другое разрешение
 8. пароль и пользователь xubuntu
+
+## Virtual box (windows или intel mac)
+
+1. Скачиваем virtual box: https://www.virtualbox.org/
+2. Находим подходящий образ операциионной системы. Это должна быть ubuntu LTS 24.04 для amd: https://releases.ubuntu.com/noble/ - скачиваем desktop (6гб)
+3. В Virtual Box нажимаем new, выбираем имя. В качестве ISO нужно указать путь до скаченного файла.
+4. В specify virtual hardware нужно установить нужное количество памяти и cpu. Можно попробовать 4gb 4 cpu.
+5. Дальше нажимаем start.
+6. После этого нужно следовать инструкции, которая будет появляться
+
+## UTM (mac)
+
+1. Скачайне UTM: https://mac.getutm.app/
+2. Остальные шаги аналогичные Virtual Box.
+3. !Важно! если у вас arm mac, то нужно выбрать emulation.
+
+## WSL (windows)
+
+1. Установите wsl с ubuntu 24.04 x86 по инструкции отсюда: https://learn.microsoft.com/en-us/windows/wsl/install
 
 
 ## Терминал
