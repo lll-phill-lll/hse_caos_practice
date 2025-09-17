@@ -9,7 +9,7 @@ yt - ссылка на запись ютуб
 vk - ссылка на запись вк
 
 1. [[к](01-intro)][[yt](https://youtu.be/Hk1x05fBTKw)][[vk](https://vkvideo.ru/video-221776054_456239058)] - Введение. Как поставить линукс на свою машину. Простые команды.
-2. [[к](02-syscalls-files)][[yt](https://youtu.be/hkgFWZjISfk)][vk - TBD] - Системные вызовы. Файлы. read/write/open/dup.
+2. [[к](02-syscalls-files)][[yt](https://youtu.be/hkgFWZjISfk)][[vk](https://vkvideo.ru/video-221776054_456239060)] - Системные вызовы. Файлы. read/write/open/dup.
 
 ## Правила игры
 
