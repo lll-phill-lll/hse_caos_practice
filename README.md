@@ -10,7 +10,10 @@ vk - ссылка на запись вк
 
 1. [[к](01-intro)][[yt](https://youtu.be/Hk1x05fBTKw)][[vk](https://vkvideo.ru/video-221776054_456239058)] - Введение. Как поставить линукс на свою машину. Простые команды.
 2. [[к](02-syscalls-files)][[yt](https://youtu.be/hkgFWZjISfk)][[vk](https://vkvideo.ru/video-221776054_456239060)] - Системные вызовы. Файлы. read/write/open/dup.
-
+3. [[к](03-mmap)][yt][vk] - Mmap и виртуальная память.
+4. [[к](04-proc)][[yt](https://youtu.be/Io4rmAkcU58)][vk] - Fork.
+5. [[к](05-exec)][[yt](https://youtu.be/vVYK3nkxCao)][vk] - Exec. Pipe.
+   
 ## Правила игры
 
 ### Форматирование ASM
