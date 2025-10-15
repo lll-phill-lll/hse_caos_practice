@@ -39,24 +39,24 @@ rax rcx rdx rbx rsi rdi rsp rbp r8 r9 r10 r11 r12 r13 r14 r15
 
 ## Части регистров:
 
-│ 64-бит │ 32-бит │ 16-бит │ 8-бит │ 8-бит (старший) │
-├────────┼────────┼────────┼───────┼─────────────────┤
-│ rax    │ eax    │ ax     │ al    │ ah              │
-│ rcx    │ ecx    │ cx     │ cl    │ ch              │
-│ rdx    │ edx    │ dx     │ dl    │ dh              │
-│ rbx    │ ebx    │ bx     │ bl    │ bh              │
-│ rsi    │ esi    │ si     │ sil   │                 │
-│ rdi    │ edi    │ di     │ dil   │                 │
-│ rsp    │ esp    │ sp     │ spl   │                 │
-│ rbp    │ ebp    │ bp     │ bpl   │                 │
-│ r8     │ r8d    │ r8w    │ r8b   │                 │
-│ r9     │ r9d    │ r9w    │ r9b   │                 │
-│ r10    │ r10d   │ r10w   │ r10b  │                 │
-│ r11    │ r11d   │ r11w   │ r11b  │                 │
-│ r12    │ r12d   │ r12w   │ r12b  │                 │
-│ r13    │ r13d   │ r13w   │ r13b  │                 │
-│ r14    │ r14d   │ r14w   │ r14b  │                 │
-│ r15    │ r15d   │ r15w   │ r15b  │                 │
+    │ 64-бит │ 32-бит │ 16-бит │ 8-бит │ 8-бит (старший) │
+    ├────────┼────────┼────────┼───────┼─────────────────┤
+    │ rax    │ eax    │ ax     │ al    │ ah              │
+    │ rcx    │ ecx    │ cx     │ cl    │ ch              │
+    │ rdx    │ edx    │ dx     │ dl    │ dh              │
+    │ rbx    │ ebx    │ bx     │ bl    │ bh              │
+    │ rsi    │ esi    │ si     │ sil   │                 │
+    │ rdi    │ edi    │ di     │ dil   │                 │
+    │ rsp    │ esp    │ sp     │ spl   │                 │
+    │ rbp    │ ebp    │ bp     │ bpl   │                 │
+    │ r8     │ r8d    │ r8w    │ r8b   │                 │
+    │ r9     │ r9d    │ r9w    │ r9b   │                 │
+    │ r10    │ r10d   │ r10w   │ r10b  │                 │
+    │ r11    │ r11d   │ r11w   │ r11b  │                 │
+    │ r12    │ r12d   │ r12w   │ r12b  │                 │
+    │ r13    │ r13d   │ r13w   │ r13b  │                 │
+    │ r14    │ r14d   │ r14w   │ r14b  │                 │
+    │ r15    │ r15d   │ r15w   │ r15b  │                 │
 
 ```
   ┌──────────────────────────────┐

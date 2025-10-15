@@ -39,8 +39,8 @@ main:
     // второе число
     mov     r13, rax
 
-    // sub     DST, SRC   /* DST -= SRC */
 my_sub:
+    // consider cmp
     sub     r12, r13
     jz      end
     jl      print_less
