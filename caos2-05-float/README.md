@@ -248,6 +248,27 @@ typedef union {
 } float_uni;
 ```
 
+# Работа с float
+
+    #include <math.h>
+
+компилировать с `-lm`
+
+Функции из библиотеки:
+
+    int isinf(float) - вернет 0 если не inf, любое другое число если inf
+    int isnan(float) - аналогично про NaN
+    int isfinite(float) - вернет 0 если inf, любое другое число если не inf
+    int isnormal(float) - нормализованное ли число
+
+    int fpclassify(float) - классифицирует float и вернет одну из констант:
+
+     FP_INFINITE   Число inf
+     FP_NAN        Число - NaN Indicates that x is not a number (NaN).
+     FP_NORMAL     Число нормализованное
+     FP_SUBNORMAL  Число денормализованное
+     FP_ZERO       Число 0
+
 Об этом сказано в [стандарте C11](../C11_standard.pdf): 6.7.2.1, пункт 11, также об этом можно почитать на [cppreference](https://en.cppreference.com/w/c/language/bit_field) в разделе **Notes**.
 
 Для gcc есть [некоторые гарантии](https://gcc.gnu.org/legacy-ml/gcc/2004-09/msg00581.html) того, что поведение такое, как мы ожидаем.
