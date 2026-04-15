@@ -1,0 +1,14 @@
+FROM ubuntu:24.04 AS builder
+
+RUN apt-get update && \
+    apt-get install -y gcc
+
+WORKDIR /build
+COPY app/main.c .
+RUN gcc -O2 -static -o server main.c
+
+FROM scratch
+
+COPY --from=builder /build/server /server
+
+CMD ["/server"]
