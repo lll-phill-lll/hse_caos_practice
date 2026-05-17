@@ -19,13 +19,13 @@ vk - ссылка на запись вк
 1. [[k](caos2-01-asm)][[yt](https://youtu.be/5vR3eegEdHA)] - рекап ассемблера
 2. [k][[yt](https://youtu.be/gekDFYW3C_I)] - яблоко 1
 3. [k][[yt](https://youtu.be/gekDFYW3C_I)] - яблоко 2
-4. [[k](caos2-04-simd)][[yt](https://youtu.be/Qff61KxVCk8)] - SIMD
+4. [[k](caos2-04-simd)][[yt](https://youtu.be/K77lhibptM4)] - SIMD
 5. [[k](caos2-05-float)][yt] - числа с плавающей точкой
 6. [[k](caos2-06-proc)][[yt](https://youtu.be/Qff61KxVCk8)] - процессы
 7. [[k](caos2-07-hacks)][[yt](https://youtu.be/hHiVtDtJagM)] - хаки, buffer overflow
 8. [[k](caos2-08-risc-v)][[yt](https://youtu.be/UOa2XCEMCH0)] - RISC-V
 9. [[k](caos2-09-time)][[yt](https://youtu.be/iN5SUCe211Q)] - время
-10. [[k](caos2-10-cpu)][[yt](https://youtu.be/eRGtHWfyJDk)] - процессы, планирование
+10. [[k](caos2-10-cpu)][[yt](https://youtu.be/eRGtHWfyJDk)] - процессор, планирование
 11. [[k](caos2-11-docker)][[yt](https://youtu.be/BSSTAtD4Nug)] - Docker
 12. [[k](caos2-12-perf)][[yt](https://youtu.be/xvl3qyidFTc)] - профилирование
 13. [[k](caos2-13-net)][[yt](https://youtu.be/NEzjkFBbjU8)] - сети
