@@ -1,97 +1,81 @@
-// interp.hpp — интерпретатор запроса: дерево операторов с виртуальным eval().
-//
-// КАНОНИЧЕСКИЙ интерпретатор (паттерн Interpreter, expression-деревья в СУБД):
-// абстрактный базовый класс Operator, по подклассу на каждую операцию. Дерево
-// объектов строится один раз; на каждую операцию каждой строки — виртуальный
-// вызов через vtable. Цена универсальности — непрямой вызов на КАЖДЫЙ узел: его
-// нельзя заинлайнить, и предсказатель переходов на нём часто промахивается.
-
 #pragma once
 #include <cstdint>
-#include <cstdlib>
 #include <memory>
+#include <span>
 #include "expr.hpp"
 
-// ============== Дерево операторов с виртуальным eval() ==============
-//
-// Самый честный baseline: абстрактный базовый класс Operator, по подклассу
-// на каждую операцию, дерево строится один раз функцией buildOperator().
-// Горячий путь — root->eval(row), уходящий в цепочку виртуальных вызовов.
-// Цена универсальности здесь — непрямой вызов (vtable) на КАЖДЫЙ узел: его
-// нельзя заинлайнить, и предсказатель переходов на нём часто промахивается.
+using Row = std::span<const uint64_t>;
 
-struct Operator {
-    virtual ~Operator() = default;
-    virtual uint64_t eval(const uint64_t* row) const = 0;
+struct TOperator {
+    virtual ~TOperator() = default;
+    virtual uint64_t eval(Row row) const = 0;
 };
 
-using OpPtr = std::unique_ptr<Operator>;
+using OpPtr = std::unique_ptr<TOperator>;
 
-struct ConstOp : Operator {
+struct TConstOp : TOperator {
     uint64_t v;
-    explicit ConstOp(uint64_t v) : v(v) {}
-    uint64_t eval(const uint64_t*) const override { return v; }
+    explicit TConstOp(uint64_t v) : v(v) {}
+    uint64_t eval(Row) const override { return v; }
 };
 
-struct ColOp : Operator {
+struct TColOp : TOperator {
     int idx;
-    explicit ColOp(int i) : idx(i) {}
-    uint64_t eval(const uint64_t* row) const override { return row[idx]; }
+    explicit TColOp(int i) : idx(i) {}
+    uint64_t eval(Row row) const override { return row[idx]; }
 };
 
-struct NegOp : Operator {
+struct TNegOp : TOperator {
     OpPtr a;
-    explicit NegOp(OpPtr a) : a(std::move(a)) {}
-    uint64_t eval(const uint64_t* row) const override { return -a->eval(row); }
+    explicit TNegOp(OpPtr a) : a(std::move(a)) {}
+    uint64_t eval(Row row) const override { return -a->eval(row); }
 };
 
-// Бинарные/унарные операции параметризуем функтором — у каждого инстанса
-// шаблона свой класс и своя vtable, так что switch'а в рантайме нет.
 template <class F>
-struct BinOp : Operator {
+struct TBinOp : TOperator {
     OpPtr a, b;
-    BinOp(OpPtr a, OpPtr b) : a(std::move(a)), b(std::move(b)) {}
-    uint64_t eval(const uint64_t* row) const override { return F{}(a->eval(row), b->eval(row)); }
+    TBinOp(OpPtr a, OpPtr b) : a(std::move(a)), b(std::move(b)) {}
+    uint64_t eval(Row row) const override { return F{}(a->eval(row), b->eval(row)); }
 };
 
-struct SelectOp : Operator {
+struct TSelectOp : TOperator {
     OpPtr c, t, e;
-    SelectOp(OpPtr c, OpPtr t, OpPtr e) : c(std::move(c)), t(std::move(t)), e(std::move(e)) {}
-    uint64_t eval(const uint64_t* row) const override {
+    TSelectOp(OpPtr c, OpPtr t, OpPtr e) : c(std::move(c)), t(std::move(t)), e(std::move(e)) {}
+    uint64_t eval(Row row) const override {
         return c->eval(row) != 0 ? t->eval(row) : e->eval(row);
     }
 };
 
-struct FAdd { uint64_t operator()(uint64_t a, uint64_t b) const { return a + b; } };
-struct FSub { uint64_t operator()(uint64_t a, uint64_t b) const { return a - b; } };
-struct FMul { uint64_t operator()(uint64_t a, uint64_t b) const { return a * b; } };
-struct FLt  { uint64_t operator()(uint64_t a, uint64_t b) const { return a <  b ? 1 : 0; } };
-struct FGt  { uint64_t operator()(uint64_t a, uint64_t b) const { return a >  b ? 1 : 0; } };
-struct FLe  { uint64_t operator()(uint64_t a, uint64_t b) const { return a <= b ? 1 : 0; } };
-struct FGe  { uint64_t operator()(uint64_t a, uint64_t b) const { return a >= b ? 1 : 0; } };
-struct FEq  { uint64_t operator()(uint64_t a, uint64_t b) const { return a == b ? 1 : 0; } };
-struct FNe  { uint64_t operator()(uint64_t a, uint64_t b) const { return a != b ? 1 : 0; } };
-struct FMin { uint64_t operator()(uint64_t a, uint64_t b) const { return a < b ? a : b; } };
-struct FMax { uint64_t operator()(uint64_t a, uint64_t b) const { return a > b ? a : b; } };
+struct TFAdd { uint64_t operator()(uint64_t a, uint64_t b) const { return a + b; } };
+struct TFSub { uint64_t operator()(uint64_t a, uint64_t b) const { return a - b; } };
+struct TFMul { uint64_t operator()(uint64_t a, uint64_t b) const { return a * b; } };
+struct TFLt  { uint64_t operator()(uint64_t a, uint64_t b) const { return a <  b ? 1 : 0; } };
+struct TFGt  { uint64_t operator()(uint64_t a, uint64_t b) const { return a >  b ? 1 : 0; } };
+struct TFLe  { uint64_t operator()(uint64_t a, uint64_t b) const { return a <= b ? 1 : 0; } };
+struct TFGe  { uint64_t operator()(uint64_t a, uint64_t b) const { return a >= b ? 1 : 0; } };
+struct TFEq  { uint64_t operator()(uint64_t a, uint64_t b) const { return a == b ? 1 : 0; } };
+struct TFNe  { uint64_t operator()(uint64_t a, uint64_t b) const { return a != b ? 1 : 0; } };
+struct TFMin { uint64_t operator()(uint64_t a, uint64_t b) const { return a < b ? a : b; } };
+struct TFMax { uint64_t operator()(uint64_t a, uint64_t b) const { return a > b ? a : b; } };
 
-inline OpPtr buildOperator(const Node* n) {
-    auto k = [&](int i) { return buildOperator(n->kids[i].get()); };
-    switch (n->op) {  // switch только при ПОСТРОЕНИИ дерева (один раз), не в eval
-        case Op::Num: return std::make_unique<ConstOp>(n->num);
-        case Op::Col: return std::make_unique<ColOp>(n->col);
-        case Op::Neg: return std::make_unique<NegOp>(k(0));
-        case Op::Add: return std::make_unique<BinOp<FAdd>>(k(0), k(1));
-        case Op::Sub: return std::make_unique<BinOp<FSub>>(k(0), k(1));
-        case Op::Mul: return std::make_unique<BinOp<FMul>>(k(0), k(1));
-        case Op::Lt:  return std::make_unique<BinOp<FLt>>(k(0), k(1));
-        case Op::Gt:  return std::make_unique<BinOp<FGt>>(k(0), k(1));
-        case Op::Le:  return std::make_unique<BinOp<FLe>>(k(0), k(1));
-        case Op::Ge:  return std::make_unique<BinOp<FGe>>(k(0), k(1));
-        case Op::Eq:  return std::make_unique<BinOp<FEq>>(k(0), k(1));
-        case Op::Ne:  return std::make_unique<BinOp<FNe>>(k(0), k(1));
-        case Op::Min:    return std::make_unique<BinOp<FMin>>(k(0), k(1));
-        case Op::Max:    return std::make_unique<BinOp<FMax>>(k(0), k(1));
-        case Op::Select: return std::make_unique<SelectOp>(k(0), k(1), k(2));
+inline OpPtr buildOperator(const TNode& n) {
+    auto k = [&](int i) { return buildOperator(*n.kids[i]); };
+    switch (n.op) {
+        case Op::Num: return std::make_unique<TConstOp>(n.num);
+        case Op::Col: return std::make_unique<TColOp>(n.col);
+        case Op::Neg: return std::make_unique<TNegOp>(k(0));
+        case Op::Add: return std::make_unique<TBinOp<TFAdd>>(k(0), k(1));
+        case Op::Sub: return std::make_unique<TBinOp<TFSub>>(k(0), k(1));
+        case Op::Mul: return std::make_unique<TBinOp<TFMul>>(k(0), k(1));
+        case Op::Lt:  return std::make_unique<TBinOp<TFLt>>(k(0), k(1));
+        case Op::Gt:  return std::make_unique<TBinOp<TFGt>>(k(0), k(1));
+        case Op::Le:  return std::make_unique<TBinOp<TFLe>>(k(0), k(1));
+        case Op::Ge:  return std::make_unique<TBinOp<TFGe>>(k(0), k(1));
+        case Op::Eq:  return std::make_unique<TBinOp<TFEq>>(k(0), k(1));
+        case Op::Ne:  return std::make_unique<TBinOp<TFNe>>(k(0), k(1));
+        case Op::Min: return std::make_unique<TBinOp<TFMin>>(k(0), k(1));
+        case Op::Max: return std::make_unique<TBinOp<TFMax>>(k(0), k(1));
+        case Op::Select: return std::make_unique<TSelectOp>(k(0), k(1), k(2));
     }
-    return std::make_unique<ConstOp>(0);  // недостижимо
+    return std::make_unique<TConstOp>(0);
 }
