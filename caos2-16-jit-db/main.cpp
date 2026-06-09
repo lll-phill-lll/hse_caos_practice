@@ -15,14 +15,14 @@
 #include "cppjit.hpp"
 
 using Clock = std::chrono::steady_clock;
+using Data = std::vector<uint64_t>;
 
 double seconds(Clock::time_point a, Clock::time_point b) {
     return std::chrono::duration<double>(b - a).count();
 }
 
 template <class Eval>
-double runEngine(Eval&& eval, const std::vector<uint64_t>& data,
-                 size_t rows, int numCols, uint64_t& sumOut) {
+double runEngine(Eval&& eval, const Data& data, size_t rows, int numCols, uint64_t& sumOut) {
     std::span<const uint64_t> all(data);
     size_t cols = (size_t)numCols;
     auto t0 = Clock::now();
@@ -35,6 +35,73 @@ double runEngine(Eval&& eval, const std::vector<uint64_t>& data,
 
 void writeFile(std::string_view path, std::string_view s) {
     std::ofstream(std::string(path)) << s;
+}
+
+struct InterpResult {
+    double time = 0;
+    uint64_t sum = 0;
+};
+
+struct JitResult {
+    double time = 0;
+    uint64_t sum = 0;
+    double compile = 0, build = 0, opt = 0, backend = 0;
+};
+
+struct CppResult {
+    double time = 0;
+    uint64_t sum = 0;
+    double compile = 0;
+    bool ok = false;
+};
+
+InterpResult runInterpreter(const TNode& ast, const Data& data, size_t rows, int numCols) {
+    OpPtr opTree = buildOperator(ast);
+    InterpResult r;
+    r.time = runEngine([&](Row row) { return opTree->eval(row); }, data, rows, numCols, r.sum);
+    return r;
+}
+
+JitResult runJit(const TNode& ast, const Data& data, size_t rows, int numCols) {
+    TJit jit;
+    jit.dumpObjectTo("jit_query.o");
+
+    auto c0 = Clock::now();
+    std::string irUnopt = jit.buildIR(ast, numCols);
+    auto c1 = Clock::now();
+    std::string irOpt = jit.optimize();
+    auto c2 = Clock::now();
+    RowFn fn = jit.compile();
+    auto c3 = Clock::now();
+
+    writeFile("query.ll", irUnopt);
+    writeFile("query.opt.ll", irOpt);
+
+    JitResult r;
+    r.build = seconds(c0, c1);
+    r.opt = seconds(c1, c2);
+    r.backend = seconds(c2, c3);
+    r.compile = seconds(c0, c3);
+    r.time = runEngine([&](Row row) { return fn(row.data()); }, data, rows, numCols, r.sum);
+    return r;
+}
+
+CppResult runJitCpp(const TNode& ast, const Data& data, size_t rows, int numCols) {
+    TCppJit cpp;
+    std::string src = cpp.genSource(ast, numCols);
+    cpp.writeSource(src);
+
+    auto d0 = Clock::now();
+    bool compiled = cpp.compileLib();
+    auto d1 = Clock::now();
+
+    CppResult r;
+    r.compile = seconds(d0, d1);
+    RowFn fn = compiled ? cpp.load() : nullptr;
+    r.ok = fn != nullptr;
+    if (fn)
+        r.time = runEngine([&](Row row) { return fn(row.data()); }, data, rows, numCols, r.sum);
+    return r;
 }
 
 int main(int argc, char** argv) {
@@ -68,78 +135,32 @@ int main(int argc, char** argv) {
     dumpAstTree(*ast, tree);
     std::cout << std::format("parsed     : {}\nAST:\n{}\n", norm, tree);
 
-    std::vector<uint64_t> data((size_t)rows * numCols);
+    Data data((size_t)rows * numCols);
     std::mt19937_64 rng(seed);
     std::uniform_int_distribution<uint64_t> dist(0, 100);
     for (auto& x : data) x = dist(rng);
 
-    uint64_t sumVirt = 0;
-    double tVirt = 0.0;
-    {
-        OpPtr opTree = buildOperator(*ast);
-        tVirt = runEngine([&](Row row) { return opTree->eval(row); },
-                          data, rows, numCols, sumVirt);
-    }
-
-    TJit jit;
-    jit.dumpObjectTo("jit_query.o");
-    auto c0 = Clock::now();
-    std::string irUnopt = jit.buildIR(*ast, numCols);
-    auto c1 = Clock::now();
-    std::string irOpt = jit.optimize();
-    auto c2 = Clock::now();
-    RowFn fn = jit.compile();
-    auto c3 = Clock::now();
-
-    double tBuild = seconds(c0, c1), tOpt = seconds(c1, c2);
-    double tBackend = seconds(c2, c3), tCompile = seconds(c0, c3);
-
-    uint64_t sumJit = 0;
-    double tJit = runEngine([&](Row row) { return fn(row.data()); },
-                            data, rows, numCols, sumJit);
-
-    TCppJit cpp;
-    std::string cppSrc = cpp.genSource(*ast, numCols);
-    cpp.writeSource(cppSrc);
-    auto d0 = Clock::now();
-    bool cppOk = cpp.compileLib();
-    auto d1 = Clock::now();
-    RowFn cppFn = cppOk ? cpp.load() : nullptr;
-    double tCppCompile = seconds(d0, d1);
-
-    uint64_t sumCpp = 0;
-    double tCpp = 0.0;
-    if (cppFn)
-        tCpp = runEngine([&](Row row) { return cppFn(row.data()); },
-                         data, rows, numCols, sumCpp);
-
-    writeFile("query.ll", irUnopt);
-    writeFile("query.opt.ll", irOpt);
-    std::cout << std::format("--- LLVM IR, unoptimized ---\n{}\n", irUnopt);
-    std::cout << std::format("--- LLVM IR, after O2 ---\n{}\n", irOpt);
-    std::cout << std::format("--- generated C++ ---\n{}\n", cppSrc);
+    InterpResult interp = runInterpreter(*ast, data, rows, numCols);
+    CppResult cpp = runJitCpp(*ast, data, rows, numCols);
+    JitResult jit = runJit(*ast, data, rows, numCols);
 
     auto mrows = [&](double t) { return t > 0 ? (double)rows / t / 1e6 : 0.0; };
 
     std::cout << std::format("{:<22}{:>10}{:>11}   {}\n", "engine", "time, s", "Mrows/s", "SUM");
-    std::cout << std::format("{:<22}{:>10.3f}{:>11.1f}   {}\n", "interpreter", tVirt, mrows(tVirt), sumVirt);
-    std::cout << std::format("{:<22}{:>10.3f}{:>11.1f}   {}\n", "LLVM JIT", tJit, mrows(tJit), sumJit);
-    if (cppFn)
-        std::cout << std::format("{:<22}{:>10.3f}{:>11.1f}   {}\n", "C++ -> .so", tCpp, mrows(tCpp), sumCpp);
+    std::cout << std::format("{:<22}{:>10.3f}{:>11.1f}   {}\n", "interpreter", interp.time, mrows(interp.time), interp.sum);
+    std::cout << std::format("{:<22}{:>10.3f}{:>11.1f}   {}\n", "LLVM JIT", jit.time, mrows(jit.time), jit.sum);
+    if (cpp.ok)
+        std::cout << std::format("{:<22}{:>10.3f}{:>11.1f}   {}\n", "C++ -> .so", cpp.time, mrows(cpp.time), cpp.sum);
     else
-        std::cout << "C++ -> .so            (compile failed)\n";
+        std::cout << "C++ -> .so (compile failed)\n";
 
-    std::cout << std::format("\ncompile once: LLVM JIT {:.3f} ms (build {:.3f} + opt {:.3f} + backend {:.3f})\n",
-                             tCompile * 1e3, tBuild * 1e3, tOpt * 1e3, tBackend * 1e3);
-    if (cppFn)
-        std::cout << std::format("              C++ -> .so {:.1f} ms ({:.0f}x slower to compile)\n",
-                                 tCppCompile * 1e3, tCppCompile / tCompile);
+    std::cout << std::format("\nLLVM JIT {:.3f} ms (build {:.3f} + opt {:.3f} + backend {:.3f})\n",
+                             jit.compile * 1e3, jit.build * 1e3, jit.opt * 1e3, jit.backend * 1e3);
+    if (cpp.ok)
+        std::cout << std::format("-> .so {:.1f} ms\n",
+                                 cpp.compile * 1e3);
 
-    std::string speed = std::format("speedup vs interpreter: LLVM JIT {:.1f}x", tVirt / tJit);
-    if (cppFn) speed += std::format(", C++ JIT {:.1f}x", tVirt / tCpp);
-    std::cout << speed << "\n";
-
-    bool ok = (sumVirt == sumJit) && (!cppFn || sumVirt == sumCpp);
+    bool ok = (interp.sum == jit.sum) && (!cpp.ok || interp.sum == cpp.sum);
     std::cout << std::format("match: {}\n", ok ? "OK" : "MISMATCH");
-    return ok ? 0 : 1;
+    return 0;
 }

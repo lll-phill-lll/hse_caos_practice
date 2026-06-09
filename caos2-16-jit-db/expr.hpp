@@ -9,6 +9,28 @@
 #include <string_view>
 #include <vector>
 
+/*
+ * ebnf
+grammar Expr;
+prog    : ternary EOF ;
+ternary : compare ('?' ternary ':' ternary)? ;
+compare : add (relop add)? ;                 
+add     : mul (('+' | '-') mul)* ;          
+mul     : unary ('*' unary)* ;             
+unary   : ('-' | '+') unary | primary ;   
+primary : NUM
+        | COL
+        | func '(' ternary ',' ternary ')'
+        | '(' ternary ')'
+        ;
+relop   : '<' | '<=' | '>' | '>=' | '==' | '!=' ;
+func    : 'min' | 'max' ;
+
+NUM : [0-9]+ ;
+COL : 'c' [0-9]+ ;
+WS  : [ \t\r\n]+ -> skip ;
+*/
+
 enum class Op {
     Num, Col, Neg,
     Add, Sub, Mul,

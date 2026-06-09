@@ -43,10 +43,13 @@ void genCpp(const TNode& n, std::string& out) {
         case Op::Min: fn2("std::min<uint64_t>"); break;
         case Op::Max: fn2("std::max<uint64_t>"); break;
         case Op::Select:
-            out += "sel(";
-            genCpp(*n.kids[0], out); out += ", ";
-            genCpp(*n.kids[1], out); out += ", ";
-            genCpp(*n.kids[2], out); out += ")";
+            out += "(((";
+            genCpp(*n.kids[0], out);
+            out += ") != 0) ? (";
+            genCpp(*n.kids[1], out);
+            out += ") : (";
+            genCpp(*n.kids[2], out);
+            out += "))";
             break;
     }
 }
@@ -58,10 +61,6 @@ std::string TCppJit::genSource(const TNode& root, int numCols) {
         "// generated from query (numCols={})\n"
         "#include <algorithm>\n"
         "#include <cstdint>\n\n"
-        "static inline uint64_t sel(uint64_t c, uint64_t a, uint64_t b) {{\n"
-        "    uint64_t m = -(uint64_t)(c != 0);\n"
-        "    return (a & m) | (b & ~m);\n"
-        "}}\n\n"
         "extern \"C\" uint64_t query(const uint64_t* row) {{\n"
         "    return {};\n"
         "}}\n",
